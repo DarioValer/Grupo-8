@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir producto</title>
+    <script src="https://kit.fontawesome.com/ce21b579cc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=MedievalSharp&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="/css/styleaddproduct.css" rel="stylesheet">
+</head>
+
+<body>
+     <!-- Navbar -->
+    <%- include('./partials/headerNavbar') %>
+    
+<section>
+    <form action="/products/addproduct" method="POST" enctype="multipart/form-data" class="form-addprod">
+
+        
+        <div class="form-add-product">
+            <div><h2 class="h2-add-prod">Cargar nuevo producto</h2></div>
+            
+            <div class="part1">
+                <input class="inp-add-prod" id="title" name="title" type="text" placeholder="Título" size="30" required>
+                <input class="inp-add-prod" name="shortDescription" type="text" placeholder="Descripción" size="200" required>
+
+                <select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
+                    <option disabled selected>Categoría</option>
+                    <option value="1">Juegos de rol de mesa</option>
+                    <option value="2">Miniaturas y accesorios</option>
+                    <option value="3">Juegos de cartas</option>
+                </select>
+
+                <select id="status" name="status" class="selectCategorias" required>
+                    <option value="1" selected>Novedad</option>
+                </select>
+
+                <input class="inp-add-prod" name="price" id="number" type="number" placeholder="Precio" required>
+
+            </div>
+        
+        
+            <div class="part2">
+                
+                <div class="divAddImages">
+                    <p class="textAddImages">Cargar imágenes</p>
+                    <input name="image" id="prod-image" type="file" multiple="multiple" class="addImages" accept= ".jpg, .jpeg .png" required>
+
+                    
+                </div>
+
+                <div class="images-to-add">
+                   <div class="inp-add-image" type="" id="preview"> </div>
+                </div>
+            </div>
+
+            <div >
+                <div><input class="add-prod-button" type="submit" name="submit" value="Agregar"></div>
+                <div><input class="reset-prod-button" type="reset" value="Borrar"></div>
+            </div>
+        </div>
+        
+    </form>
+</section>
+<script src="/js/previewImg.js"></script>
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar productos</title>
+    <script src="https://kit.fontawesome.com/ce21b579cc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=MedievalSharp&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="/css/styleeditproduct.css" rel="stylesheet">
+</head>
+
+<body>
+     <!-- Navbar -->
+    <%- include('./partials/headerNavbar') %>
+
+    <section>
+			
+		<div class="form-addprod">
+			<form action="/products/editProduct/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+				<div class="form-edit-product">
+
+					<h2 class="products-title">Estás editando el producto <div class="product-title-toedit">"<%=product.title%>"</div></h2>
+
+					<div class="part1">
+						<label for="title" class="form-label">Título</label>
+						<input class="inp-add-prod" type="text" id="title" name="title" size="30" value="<%=product.title%>">
+
+						<label for="descrip" class="form-label">Descripción</label>
+						<input class="inp-add-prod" type="text" id="descrip" name="descrip" size="200" value="<%=product.descrip%>">
+					
+						<select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
+							<option disabled selected>Categoría</option>
+							<option value="1">Juegos de rol de mesa</option>
+							<option value="2">Miniaturas y accesorios</option>
+							<option value="3">Juegos de cartas</option>
+						</select>
+
+						<select id="status" name="status" class="selectCategorias" required>
+							<option disabled selected>Estatus</option>
+							<option value="1">Novedad</option>
+							<option value="2">Oferta</option>
+							<option value="3">General</option>
+						</select>
+
+						<label for="price" class="form-label">Precio</label>
+						<input class="inp-add-prod" type="number" id="price" name="price" value=<%=product.price%> class="form-input">
+					
+					<!--<div class="col-12 col-md-6">
+						<label for="discount" class="form-label">Descuento:</label>
+						<input type="number" id="discount" name="discountPercentage" value="<%=product.discountPercentage%>" class="form-input">
+					</div> -->
+
+					<div class="divAddImages">
+						<p class="textAddImages">Cargar imágenes</p>
+						<input name="image" id="prod-image" type="file" multiple="multiple" class="addImages" accept= ".jpg, .jpeg .png" required>
+					</div>
+
+					<div class="images-to-add">
+						<div class="inp-add-image" type="" id="preview"> </div>
+					 </div>
+				    </div>
+
+					<div class="col-12">
+						<button type="submit" name="submit" class="add-prod-button">Guardar cambios</button>
+					</div>
+					<div class="prueba_delete_button">
+					</div>
+				
+			
+			</form>
+			<form action="/products/editProduct/<%=product.id%>?_method=DELETE" method="POST" enctype="multipart/form-data" class="form-addprod">
+				<button id="eraseProduct" type="submit" name="avaible" class="reset-prod-button">Borrar producto</button>
+				<script type="text/javascript">
+					document.getElementById("eraseProduct").onclick= function() {
+						alert("¿Está seguro de que quiere borrar el producto?");
+						return product.avaible = false;
+					}
+				</script>
+	        </form>
+		</div>
+		</div>
+		</div>
+
+	</div>
+
+</section>
+	<script src="/js/previewImg.js"></script>
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<link href="/css/stylesheadernav.css" rel="stylesheet">
+
+    <nav class="desktop-nav">
+      <div class="container">
+
+        <h1>LaGuaridaDelDragón</h1>
+        
+        <div class="menu">
+          <%  if (!locals.isLogged) { %>
+          <a href="/users/login" class="hideWhenLogged">Ingresar</a>
+          <a href="/users/register" class="hideWhenLogged">Registrarse</a>
+          <% } %>
+          <a href="/products">Catálogo</a>
+          <a href="#" class="search-button">Buscar</a>
+          <form action="#" class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <button type="submit" class="go-icon"><i class="fas fa-search"></i></button>
+          </form>
+          <%  if (locals.isLogged) { %>
+          <a href="#">Carrito</a>
+          <% } %>
+          <a href="/">Home</a>
+        </div>
+        
+        <%  if (locals.isLogged) { %>
+          <a href="/users/login"><img class="profileImage" src="/img/avatars/<%= locals.userLogged.avatar || 'default-avatar.png' %>" width="100%" height="100%"></a>
+        <% } %>
+
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+  
+      </div>
+
+    </nav>
+
+    <nav class="mobile-nav">
+      <%  if (locals.isLogged) { %>
+      <div class="profileImageMobile">
+        <a href="/users/login"><img  src="/img/avatars/<%= locals.userLogged.avatar || 'default-avatar.png' %>"  width="100%" height="100%"></a>
+      </div>
+      <% } %>
+      <%  if (!locals.isLogged) { %>
+      <a href="/users/login" id="myLinks">Ingresar</a>
+      <a href="/users/register" id="myLinks">Registrarse</a>
+      <% } %>
+      <a href="/products">Catálogo</a>
+      <a href="#">Buscar</a>
+      <%  if (locals.isLogged) { %>
+        <a href="#">Carrito</a>
+      <% } %>
+      <a href="/">Home</a>
+    </nav>
+
+    <script src="/js/main.js"></script>
+    

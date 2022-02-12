@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar perfil de usuario</title>
+    <link rel="stylesheet" href="/css/styleuserprofiletoedit.css">
+</head>
+<body>  
+    <!-- Navbar -->
+    <%- include('./partials/headerNavbar') %>
+    
+    <form class="container-form" action="/users/profileToEdit/<%=locals.userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <h2 class="h2-prof-edit">Datos a modificar</h2>
+        <label>Nombre</label>
+        <input class="input-form" type="text" name="name" value="<%= locals.userLogged.first_name %>" required>
+        <label>Apellido</label>
+        <input class="input-form" type="text" name="lastName" value="<%= locals.userLogged.last_name %>" required>
+        <label>Usuario</label>
+        <input class="input-form" type="text" name="userAlias" value="<%= locals.userLogged.user_alias %>" required>
+        <label>E-Mail</label>
+        <input class="input-form" type="email" name="eMail" value="<%= locals.userLogged.email %>" disabled selected required>
+        
+        <input class="button-for" id="submit" type="submit" value="Guardar cambios">
+    </form>
+    
+    <!-- Footer --> 
+    <%- include('./partials/footer') %>
+     
+</body>
+</html>
+

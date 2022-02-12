@@ -1,0 +1,251 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    cursor: url('../img/iconoCursor2.png'), auto;
+}
+
+body {
+    /*background-color: rgb(248, 237, 220);*/
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.novelties-prods {
+    margin-top: 16%;
+    z-index: 99;
+}
+
+.banner-prods {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    background-color: rgb(86 21 17);
+    color: white;
+    text-shadow: 0px 0px 10px rgba(2, 0, 112, 0.89);
+}
+
+.main-container-prods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.novelties-prods article {
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.offers article {
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.main img {
+    width: 100vw;
+}
+
+.title-prod {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content:center;    
+    Align-items: center;       
+    color: white;
+    border-radius: 5px;
+    margin-right: auto;   
+    margin-left: auto;
+}
+
+.display-product {
+    background-color: rgb(167, 37, 37);
+    padding: 5px;
+    border: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    max-width: 350px;
+    min-width: 350px;
+    border-radius: 5px;
+    z-index: 90;
+    position: relative;
+}
+
+.display-product:hover {
+    /*background-color: #ffc115;*/
+    box-shadow: 0px 0px 10px #272727;
+    transition: all 0.25s;
+    cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+}
+
+.display-product img {
+   
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.display-description {
+    background-color: white;
+    width: 100%;
+    padding: 10px 10px;
+    text-align: left;
+    border-top: 1px solid #ebebeb;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.fa-hand-point-right {
+    color: limegreen;
+    
+    font-size: 20px;
+    font-weight: bold;
+    width: 5%;
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.fa-hand-point-right:hover {
+    transform: translate(5px, 0%);
+}
+
+.price {
+    background-color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 12px 0;
+    width: 30%;
+    padding: 10px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.discount {
+    background-color: white;
+    font-size: 16px;
+    width: 5%;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.fa-tag {
+    color: limegreen;
+    border: black 5px;
+}
+
+.fa-hotjar {
+    color: red;
+    background-color: rgb(255, 230, 89);
+    border-radius: 25px;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    animation: aumentar 1s linear infinite alternate;
+    border-left: 20px;
+    margin-left: 10px;
+}
+
+.display-titulo-product{
+    display: flex;
+    border: solid, 1px, black;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.link-ref {
+    z-index: 95;
+    background-color: rgba(0 0 0 0.6);
+}
+
+.title-overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 550;
+    background-color: rgba(0, 0, 0, 0.80);
+    z-index: 98;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items:stretch;
+    border-radius: 5px;
+    padding: 10px;
+    transition: opacity 0.25s;
+}
+
+.descrip-overlay {
+    font-size: 18px;
+    font-weight: 550;
+    overflow-wrap: break-word;
+}
+
+.p-overlay {
+    margin-top: 18.5px;
+    text-align: center;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+.title-overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+.title-overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.title-overlay:hover {
+    opacity: 1;
+    cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+}
+
+.title-overlay:hover > * {
+    transform: translateY(0px);
+    cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+}
+
+.descrip-overlay {
+    margin-top: 5px;
+}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 768px) {
+    .novelties-prods {
+        margin-top: 9.5%;
+    }
+}
+
+@media(min-width: 1024px) {
+    .novelties-prods {
+        margin-top: 7.5%;
+    }
+}
+
+@media(min-width: 1440px) {
+    .novelties-prods {
+        margin-top: 4.25%;
+    }
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Guarida del Dragón</title>
+    <script src="https://kit.fontawesome.com/ce21b579cc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=MedievalSharp&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="/css/styleproduct.css" rel="stylesheet">
+</head>
+
+<body>
+     
+       <!-- Navbar -->
+       <%- include('./partials/headerNavbar') %>
+
+    <section class="novelties-prods">
+        
+        <h3 class="banner-prods">Catálogo de productos</h3>
+        
+    <div class="main-container-prods">
+        <% for (let i = 0; i < products.length; i++){%>
+        <a href="/products/detail/<%=products[i].id%>" class="link-ref"><article class="display-product">
+        <h4 class="title-prod"><%=products[i].title%></h4>
+        <div class="title-overlay title-overlay--blur">
+              <p class="p-overlay"><%=products[i].title%></p>
+            <div class="descrip-overlay">
+              <h5 class="p-overlay"><%=products[i].descrip%></p>
+            </div>
+        </div>
+
+        <img src="/img/<%=products[i].image%>" alt="imagen de producto">
+        
+        <div class="display-description">
+        <i class="fas fa-hand-point-right"></i>
+        <p class="price">$<%=products[i].price%></p>
+        </div>
+        
+    </article></a>
+    <%}%>
+    </div>
+    </section> 
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

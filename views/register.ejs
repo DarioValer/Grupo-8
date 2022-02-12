@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ce21b579cc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=MedievalSharp&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styleregister.css">
+    <title>Registro</title>
+</head>
+<body>
+       <!-- Navbar -->
+       <%- include('./partials/headerNavbar') %>
+
+       
+
+    <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-register">
+        <h2 class="h2-reg">Formulario de registro</h2>
+          
+          <div class="errors">
+            <ul></ul>
+          </div>
+
+        <!-- <% if (locals.errors) { %>
+          <% for ( let oneError in errors ) { %>
+            <p class="errores"><%= errors[oneError].msg %> </p>
+          <% } %>
+        <%} %> -->
+        <input class="inp" type="text" placeholder="&#128100; Nombre" name="name" value="<%= locals.oldData ? oldData.name : null %>" id="name">
+        <% if (locals.errors && errors.name) { %>
+          <%= errors.name.msg %>
+        <%} %>
+        <input class="inp" type="text" placeholder="&#128100; Apellido" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>" id="lastName">
+        <% if (locals.errors && errors.lastName) { %>
+          <%= errors.lastName.msg %>
+        <%} %>
+        <input class="inp" type="text" placeholder="&#128100; Usuario" name="userAlias" id="user">
+        <% if (locals.errors && errors.userAlias) { %>
+          <%= errors.userAlias.msg %>
+        <%} %>
+        <input class="inp" type="email" placeholder="&#9993; E-mail" name="eMail" value="<%= locals.oldData ? oldData.eMail : null %>" id="email">
+        <% if (locals.errors && errors.eMail) { %>
+          <%= errors.eMail.msg %>
+        <%} %>
+        <input class="inp" type="password" placeholder="&#128273; Contraseña" id="password" name='password' onkeyup="check()" value="<%= locals.oldData ? oldData.password : null %>">
+        <% if (locals.errors && errors.password) { %>
+          <%= errors.password.msg %>
+        <%} %>
+        <input class="inp" type="password" placeholder="&#128273; Confirmar contraseña" id="passwordCheck" onkeyup="check()" >
+        <span id="message"></span>
+        <script>
+        let check = function() {
+            if (document.getElementById('password').value ==
+              document.getElementById('passwordCheck').value) {
+                document.getElementById('message').innerHTML = '';
+                document.getElementById('submit').disabled = false;
+            } else {
+              document.getElementById('message').style.color = 'red';
+              document.getElementById('message').innerHTML = 'Las contraseñas no son iguales';
+              document.getElementById('submit').disabled = true;
+            }
+          }
+        </script>
+        
+        <div class="divAddImages">
+            <label class="p-reg">Foto de perfil:</label>
+            <input name="avatar" type="file" multiple="multiple" class="p-reg" accept= ".jpg, .jpeg" id="avatar">
+        </div>
+
+        <div>
+        <input class="inp-button" id="submit" type="submit" value="Registrate">
+        </div>
+
+        <p class="p-reg">¿Ya tenés cuenta? <a class= "link" href="login"> Ingresá</a></p>
+        
+    </form> 
+   <!-- Footer -->
+    <%- include('./partials/footer') %>
+    <script src="/js/validatorRegister.js"></script>
+</body>
+</html>

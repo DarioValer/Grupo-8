@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de <%= locals.userLogged.user_alias %></title>
+    <link rel="stylesheet" href="/css/styleuserprofile.css">
+</head>
+<body>
+
+     <!-- Navbar -->
+     <%- include('./partials/headerNavbar') %>
+     <% if (locals.registerSuccessful) { %>
+        <script>
+          alert('Registro exitoso')
+        </script>
+      <%} %>
+<section class="user-profile">
+ <div class="avatar-profile">
+  <img class="profile-avatar" src="/img/avatars/<%= locals.userLogged.avatar || 'default-avatar.png' %>"  alt="avatar" width="100%" height="100%">    
+</div>
+  <h2 class="h2-prof">Bienvenido <div class="user-text"><%= locals.userLogged.user_alias %></div></h2>
+
+<div class="button-container">
+
+<form class="button-form" action="/" method="get">
+
+    <button class="button">Home</button>
+   
+</form>
+
+<form class="button-form" action="/users/profileToEdit/<%=locals.userLogged.id%>?_method=PUT" method="get">
+   
+    <button class="button" href="/users/profileToEdit">Editar información</button>
+
+</form>
+
+<form class="button-form" action="/products/addproduct/" method="GET">
+
+    <button class="button">Agregar producto</button>
+    
+</form>
+
+<form class="button-form" action="/users/logout" method="get">
+
+    <button class="button">Cerrar sesión</button>
+
+</form>
+</div>
+</section>
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

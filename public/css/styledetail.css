@@ -1,0 +1,123 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    cursor: url('../img/iconoCursor2.png'), auto;
+}
+
+.main-container-detail {
+    width: 90vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+    margin-top: 20%;
+    margin-bottom: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-product-detail {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    margin-bottom: 12px;
+    background-color: rgb(167, 37, 37);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.price-detail {
+    margin-bottom: 12px;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.description-detail {
+    margin-bottom: 12px;
+    align-items: stretch;
+}
+
+.quantity-and-cart-block {
+    margin-bottom: 8px;
+}
+
+.detail-button {
+    margin-bottom: 12px;
+    display: block;
+    padding: 8px 10px;
+    background-color: red;
+    width: 70%;
+    height: 50px;
+    margin: 20px 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+}
+
+.detail-button:hover {
+    background-color: rgb(255, 64, 64);
+}
+
+.link-ref {
+    text-decoration: none;
+}
+
+.p-detail {
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 768px) {
+    .main-container-detail {
+        margin-top: 15%;
+        margin-bottom: 10%;
+    }
+}
+
+@media(min-width: 1024px) {
+    .main-container-detail {
+        flex-direction: row;
+        margin-top: 10%;
+        margin-bottom: 7%;
+    }
+    .image-product-detail {
+        width: 45vw;
+        padding: 10px;
+    }
+}
+
+@media(min-width: 1440px) {
+    .main-container-detail {
+        width: 90vw;
+        margin-top: 1.5%;
+        margin-bottom: 1%;
+    }
+    .main-product-detail {
+        width: 28vw;
+    }
+}
+
+/*
+.main-container-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20%;
+    margin-top: -15%;
+    margin-bottom: -12%;
+}*/

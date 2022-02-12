@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ce21b579cc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=MedievalSharp&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylelogin.css">
+    <title>Login</title>
+</head>
+<body>
+      <!-- Navbar -->
+      <%- include('./partials/headerNavbar') %>
+  <form action="/users/login" method="POST" class="form-login">
+      <h2 class="h2-log">Iniciar sesión</h2>
+
+      <div class="error">
+        <ul></ul>
+      </div>
+
+      <input class="inp" type="email" placeholder="&#9993; E-mail" name="eMail" id="email">
+      <% if (locals.errors && errors.eMail) { %>
+        <%= errors.eMail.msg %>
+      <%} %>
+      <input class="inp" type="password" placeholder="&#128273; Contraseña" name='password' id="password">
+      <% if (locals.errors && errors.password) { %>
+        <%= errors.password.msg %>
+      <%} %>
+      <input class="inp-button" type="submit" id="submit" value="Ingresar">
+      <label for="remember"id="remember-label"><input class="checkbox" type="checkbox" name="remember_user"> <p class="p-log">Recordar usuario y contraseña</p></label> 
+      <p class="p-log">¿No tenés cuenta? <a class= "link" href="register"> Registrate</a></p>
+      <p class="p-log">¿Olvidaste la contraseña? <a class="link" href="recoverpassword.html"> Olvidé mi contraseña</a></p>
+  </form>
+    <!-- Footer -->
+    <%- include('./partials/footer') %>
+    <script src="/js/validatorLogin.js"></script>
+ </body>
+</html>
