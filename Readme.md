@@ -24,4 +24,4 @@ Heidi Dubois: 45 años, de Venezuela pero vivo en Buenos Aires. Trabajo en el â
 
 Referencias para nuestro proyecto:
 
-Link a Tablero de Trabajo en Trello:
+Link a Tablero de Trabajo en Trello: https://trello.com/b/dcW7WS5L/proyecto-final-dh
