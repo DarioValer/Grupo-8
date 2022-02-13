@@ -20,7 +20,7 @@ Integrantes del proyecto:
 D'Angelo, Lucio: 26 años, de Buenos Aires. Geek y gamer.
 Valeriano, Darío: 19 años, de Buenos Aires. Me gusta la música y soy estudiante de ingeniería en informática.
 
-Heidi Dubois: 45 años, de Venezuela pero vivo en Buenos Aires. Trabajo en el ârea de telemarketing y dedicandome a obtener nuevos conocimientos en el desarrollo web.
+Heidi Dubois: 45 años, de Venezuela pero vivo en Buenos Aires. Trabajo en el área de telemarketing y dedicandome a obtener nuevos conocimientos en el desarrollo web.
 
 Referencias para nuestro proyecto:
 
