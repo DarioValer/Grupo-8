@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: rgb(248, 237, 220);
+    background-color: #f6f6f6;
     font-family: sans-serif;
 }
 
@@ -56,16 +56,15 @@ body {
 }
 
 .inp-button:hover {
-    background-color: rgb(255, 64, 64);
+    background-color: rgb(45, 77, 153);
 }
 
 input[type="submit"]{
-    background-color: red ;
+    background-color: rgb(51 32 189) ;
     border: 0;
     color: whitesmoke;
-    opacity: 0.8;
+    opacity: 0.9;
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
-    border-radius: 20px;
     margin-bottom: 0;
     
 }
