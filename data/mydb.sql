@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 11-02-2022 a las 00:46:45
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.0
+-- Host: 127.0.0.1
+-- Generation Time: Feb 14, 2022 at 07:14 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `mydb`
+-- Database: `mydb`
 --
 CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `mydb`;
@@ -26,7 +26,7 @@ USE `mydb`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -35,18 +35,18 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'rolBoardGame'),
-(2, 'cardsGame'),
+(1, 'smartphones and tablets'),
+(2, 'gamer articles'),
 (3, 'accesories');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -60,21 +60,21 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `title`, `price`, `image`, `descrip`, `StatusId`, `CategoryId`) VALUES
-(34, 'Uno', '2000', 'image-1644492381773.jpg', '¿Listo para el rey de los juegos rompe amistades? Disfrutá de tardes a pura risa y venganza despiadada entre amigos y amigas. Tendrás que quedarte sin cartas antes que los demás y cuando solo tengas una ¡No te olvides de decir UNO!', 2, 3),
-(35, 'Breaking Bad', '3825', 'image-1644493349054.jpg', 'Reviví las mejores escenas de las cinco temporadas de Breaking Bad y sumergite en los peligros que se ocultan en los bajos fondos de Albuquerque con este nuevo juego de tablero basado en la exitosa serie de televisión.', 1, 1),
-(36, 'The Walking Dead', '13300', 'image-1644491438988.jpg', 'En The Walking Dead: No Sanctuary, tienen que trabajar juntos para ganar. Un jugador se convierte en el líder e intenta que los demás sigan su enfoque. Si los otros jugadores desafían a su líder, la confianza flaquea, aumenta el estrés y cae la moral.', 1, 1),
-(37, 'Escape Room', '3999', 'image-1644491870744.jpg', '¿Conoces ya el concepto Escape Room? El fenómeno de escape en vivo ya está disponible en juego de mesa! Reviví una auténtica experiencia Escape Room en tu casa!', 1, 1),
-(38, 'Arkham Horror', '12900', 'image-1644492223986.jpg', 'Juego cooperativo en el que cada jugador adopta el papel de un investigador e intenta resolver aterradores misterios arcanos. Cada partida es un capítulo de una campaña mayor, en la que las decisiones tienen inesperadas consecuencias a largo plazo.', 2, 3),
-(39, 'Set Age of Sigmar', '6450', 'image-1644493095115.jpg', 'Set de pinturas y 2 miniaturas de Los Vindicadores de los Forjados de la Tormenta para Warhammer.', 3, 2);
+(34, 'Razer DeathAdder V2', '11000', 'image-1644492381773.jpg', 'Mouse de juego inalámbrico recargable Razer DeathAdder V2 Pro negro.', 2, 3),
+(35, 'Samsung Galaxy S20', '95000', 'image-1644493349054.jpg', 'Con su potente procesador y memoria RAM de 6 GB tu equipo alcanzará un alto rendimiento con gran velocidad de transmisión de contenidos y ejecutará múltiples aplicaciones a la vez sin demoras.', 1, 1),
+(36, 'Apple iPhone 11', '200000', 'image-1644491438988.jpg', 'Graba videos 4K y captura retratos espectaculares y paisajes increíbles con el sistema de dos cámaras. Toma grandes fotos con poca luz gracias al modo Noche. Disfruta colores reales en las fotos, videos y juegos con la pantalla Liquid Retina de 6.1 pulgadas.', 1, 1),
+(37, 'Apple iPad (9G)', '94000', 'image-1644491870744.jpg', 'Lleno de potencia, muy fácil de usar y versátil. El nuevo iPad viene con una espectacular pantalla Retina de 10.2 pulgadas, el potente chip A13 Bionic y una cámara frontal ultra gran angular con Encuadre Centrado.', 1, 1),
+(38, 'Razer Huntsman', '13000', 'image-1644492223986.jpg', 'Teclado gamer inalámbrico Razer Huntsman Mini QWERTY Razer Purple inglés US color negro con luz RGB.', 2, 3),
+(39, 'Sony PlayStation 5', '230000', 'image-1644493095115.jpg', 'Con tu consola PlayStation 5 tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.', 3, 2);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `status`
+-- Table structure for table `status`
 --
 
 CREATE TABLE `status` (
@@ -83,7 +83,7 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `status`
+-- Dumping data for table `status`
 --
 
 INSERT INTO `status` (`id`, `name`) VALUES
@@ -94,7 +94,7 @@ INSERT INTO `status` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -108,7 +108,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `first_name`, `last_name`, `user_alias`, `email`, `pass`, `avatar`) VALUES
@@ -116,17 +116,17 @@ INSERT INTO `user` (`id`, `first_name`, `last_name`, `user_alias`, `email`, `pas
 (17, 'Bruno', 'Braconi', 'brbr22', 'brunorbraconi@hotmail.com', '$2a$10$l5rfyt9pIzRoEf41pVJvoeAiktxyT9tYwPqDzM17m5ku5lb6UIfCO', NULL);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
@@ -134,51 +134,51 @@ ALTER TABLE `product`
   ADD KEY `fk_Product_Category1` (`CategoryId`);
 
 --
--- Indices de la tabla `status`
+-- Indexes for table `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT de la tabla `status`
+-- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_Product_Category1` FOREIGN KEY (`CategoryId`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
