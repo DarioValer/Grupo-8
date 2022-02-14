@@ -10,10 +10,7 @@ Hacer menos: Realizamos el trabajo solicitado del sprint 1 en relativo poco tiem
 
 Dejar de hacer: De momento venimos trabajando con todas las herramientas que se nos han proporcionado y no llevamos el suficiente tiempo como para saber cuáles nos serán de mayor conveniencia. Dejamos este punto a revisión para futuras retrospecciones mientras vayamos avanzando con los sprints del proyecto.
 
-
-
-
-
+...
 
 Retrospectiva quinto sprint:
 
@@ -22,3 +19,11 @@ Comenzar a hacer: Debemos trabajar en el front end de nuestro sitio, ya que nos 
 Hacer más: Trabajar mucho en el HTML y CSS.
 
 Continuar haciendo: La division de tareas se nos dio bien en este Sprint, y tambien supimos en buen tiempo corregir los errores que veniamos arrastrando del CRUD del Sprint anterior.
+
+...
+
+Retrospectiva a partir del 6to Sprint:
+
+El grupo se separo en 2 y comenzamos una ramificacion del mismo. Para esto tuvimos que cambiar detalles desde Base de Datos hasta del diseno mismo de los EJS y sus Css. Y una vez que el proyecto esta adecuado para nuestro nuevo negocio ("Tienda Tech", venta de tecnologias) poder seguir con los Sprints restantes de forma optima.
+
+Como desafio, deberemos aprender a trabajar en grupo con los nuevos integrantes y buscar la manera de que todos participemos en el proyecto.
