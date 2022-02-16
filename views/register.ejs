@@ -16,7 +16,7 @@
        
 
     <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-register">
-        <h2 class="h2-reg">Formulario de registro</h2>
+        <h2 class="h2-reg">Registrate</h2>
           
           <div class="errors">
             <ul></ul>
@@ -24,29 +24,35 @@
 
         <!-- <% if (locals.errors) { %>
           <% for ( let oneError in errors ) { %>
-            <p class="errores"><%= errors[oneError].msg %> </p>
+            <p class="errores"><%= errors[oneError].msg %></p>
           <% } %>
         <%} %> -->
+        <div class="divs">Nombre</div>
         <input class="inp" type="text" placeholder="&#128100; Nombre" name="name" value="<%= locals.oldData ? oldData.name : null %>" id="name">
         <% if (locals.errors && errors.name) { %>
           <%= errors.name.msg %>
         <%} %>
+        <div class="divs">Apellido</div>
         <input class="inp" type="text" placeholder="&#128100; Apellido" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>" id="lastName">
         <% if (locals.errors && errors.lastName) { %>
           <%= errors.lastName.msg %>
         <%} %>
+        <div class="divs">Usuario</div>
         <input class="inp" type="text" placeholder="&#128100; Usuario" name="userAlias" id="user">
         <% if (locals.errors && errors.userAlias) { %>
           <%= errors.userAlias.msg %>
         <%} %>
+        <div class="divs">E-mail</div>
         <input class="inp" type="email" placeholder="&#9993; E-mail" name="eMail" value="<%= locals.oldData ? oldData.eMail : null %>" id="email">
         <% if (locals.errors && errors.eMail) { %>
           <%= errors.eMail.msg %>
         <%} %>
+        <div class="divs">Contraseña</div>
         <input class="inp" type="password" placeholder="&#128273; Contraseña" id="password" name='password' onkeyup="check()" value="<%= locals.oldData ? oldData.password : null %>">
         <% if (locals.errors && errors.password) { %>
           <%= errors.password.msg %>
         <%} %>
+        <div class="divs">Confirmar contraseña</div>
         <input class="inp" type="password" placeholder="&#128273; Confirmar contraseña" id="passwordCheck" onkeyup="check()" >
         <span id="message"></span>
         <script>
