@@ -10,24 +10,81 @@ body {
     font-family: sans-serif;
 }
 
+.sectionn {
+    flex-wrap: wrap;
+    height: auto;
+    margin-bottom: 50px;
+}
 
+.articlee {
+    width: 100%;
+    height: auto;
+}
 
 .form-login {
     margin: auto;
-    margin-top: 25%;
-    margin-bottom: 20%;
-    width: 90vw;
-    background-color: #f3f3f3;
-    padding: 30px;
-    border: 1px solid rgba (0,0,0,0.2);
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 395px;
+    width: 95vw;
 }
+
+.logo-content-l {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
+.logo-letras-content {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.logoLetras {
+    height: 200%;
+    width: 160%;
+    margin-top: 10px;
+}
+
+
+.logo-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -60px;
+}
+
+.logo-simple-content {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #28a4bb;
+    background-color: #195591e6;
+    cursor: pointer;
+}
+
+.logoSimple {
+    height: 160%;
+    width: 160%;
+    margin-top: 10px;
+}
+
+
 
 .h2-log {
     text-align: center;
-    margin-bottom: 20px;
-    color: rgba (0,0,0,0.5);
+    margin-bottom: 60px;
+    font-size: 40px;
+    margin-top: 10px;
 }
 
 .error ul{
@@ -39,23 +96,42 @@ body {
 }
 
 .divs {
-    font-weight: bold;
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.divs p {
+    font-size: 20px;
+    margin-bottom: -2px;
+    padding-bottom: 0;
+    font-weight: 545;
+    text-align: left;
 }
 
 .inp{
     display: block;
     padding: 10px;
     width: 100%;
-    margin: 0px 0px 30px 0;
     font-size: 20px;
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 1px solid hsla(0,0%,43.9%,.5019607843137255);
+}
+
+.labell {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .inp-button {
     display: block;
     padding: 10px;
     width: 100%;
-    margin: 30px 0;
     font-size: 20px;
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
     transition: all 0.18s;
@@ -82,15 +158,19 @@ input[type='submit'] :active {
     transform: scale(0.95);
 }
 
+.check-label {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
 .checkbox {
-    position: absolute;
-    right: 55px;
-    bottom: 133px;
+    flex-grow: 0.1;
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
 }
 
 .p-log {
-    margin-top: 15px;
     font-size: 17px;
 }
 
@@ -99,9 +179,18 @@ input[type='submit'] :active {
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
 }
 
+.img-banner {
+    width: 100%;
+    height: 220px;
+    background-position: 50%;
+    background-size: 100vw;
+}
+
 .img-right {
     display: none;
 }
+
+
 
 @keyframes aumentar {
     0% { transform: scale(1) }
@@ -111,30 +200,26 @@ input[type='submit'] :active {
 /* MEDIA QUERIES */
 
 @media(min-width: 768px) {
-    .form-login {
-        /*margin-top: 20%;*/
-        /*margin-bottom: 16%;*/
-        /*max-width: 500px;*/
+    /*.form-login {
+        margin-top: 20%;
+        margin-bottom: 16%;
+        max-width: 500px;
         min-height: 100vh;
         margin-bottom: 0;
         width: 40%;
         padding:100px 50px 30px 50px;
         margin-top: 0%;
-    }
+    } */
 
     .checkbox {
         right: 55px;
         bottom: 110px;
     }
 
-    .img-right {
-        display: block;
-        width: 60%;
-    }
+    
 
-    .sectionn {
-        display: flex;
-    }
+    
+    
 
 }
 
@@ -143,8 +228,34 @@ input[type='submit'] :active {
     .errores {
         text-align: center;
         color: red;
-      } 
+    }
+
+    .img-banner {
+        display: block;
+        width: 60%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        height: auto;
+    }
+
+    .sectionn {
+        overflow: hidden;
+        width: 100%;
+        max-width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        margin-bottom: auto;
+    }
+
+    .articlee {
+        width: 40%;
+        min-height: 100vh;
+    }
 }
+    
 
 @media(min-width: 1440px) {
     .form-login {
