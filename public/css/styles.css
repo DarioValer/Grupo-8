@@ -258,7 +258,7 @@ h5 {
         display: flex;
     }
     .novelties {
-        margin-top: 45.8%;
+        margin-top: 37%;
     }
     .banner {
         margin-top: -5.5%;
@@ -272,7 +272,7 @@ h5 {
 
 @media(min-width: 1024px) {
     .novelties {
-        margin-top: 47%;
+        margin-top: 38%;
     }
     .banner {
         margin-top: -4%;
@@ -281,7 +281,7 @@ h5 {
 
 @media(min-width: 1440px) {
     .novelties {
-        margin-top: 48.5%;
+        margin-top: 40.5%;
     }
     .banner {
         margin-top: -2.5%;
