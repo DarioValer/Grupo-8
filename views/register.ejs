@@ -11,78 +11,112 @@
 </head>
 <body>
        <!-- Navbar -->
-       <%- include('./partials/headerNavbar') %>
-
-       
-
-    <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-register">
-        <h2 class="h2-reg">Registrate</h2>
-          
-          <div class="errors">
-            <ul></ul>
+      <!-- <%- include('./partials/headerNavbar') %>  -->
+    <section class="sectionn">
+      <img style="background-image: url(/img/Banner2.png);" alt="" class="img-banner">
+      <article class="articlee">
+        <div class="logo-content-l">
+          <a href="/" class="logo-letras-content">
+            <div class="logo-letras-content">
+              <img class="logoLetras" src="/img/logoLetras.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="logo-content">
+          <a href="/" class="logo-letras-content">
+          <div class="logo-simple-content">
+            <img class="logoSimple" src="/img/logoSimple.png" alt="">
           </div>
-
-        <!-- <% if (locals.errors) { %>
-          <% for ( let oneError in errors ) { %>
-            <p class="errores"><%= errors[oneError].msg %></p>
-          <% } %>
-        <%} %> -->
-        <div class="divs">Nombre</div>
-        <input class="inp" type="text" placeholder="&#128100; Nombre" name="name" value="<%= locals.oldData ? oldData.name : null %>" id="name">
-        <% if (locals.errors && errors.name) { %>
-          <%= errors.name.msg %>
-        <%} %>
-        <div class="divs">Apellido</div>
-        <input class="inp" type="text" placeholder="&#128100; Apellido" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>" id="lastName">
-        <% if (locals.errors && errors.lastName) { %>
-          <%= errors.lastName.msg %>
-        <%} %>
-        <div class="divs">Usuario</div>
-        <input class="inp" type="text" placeholder="&#128100; Usuario" name="userAlias" id="user">
-        <% if (locals.errors && errors.userAlias) { %>
-          <%= errors.userAlias.msg %>
-        <%} %>
-        <div class="divs">E-mail</div>
-        <input class="inp" type="email" placeholder="&#9993; E-mail" name="eMail" value="<%= locals.oldData ? oldData.eMail : null %>" id="email">
-        <% if (locals.errors && errors.eMail) { %>
-          <%= errors.eMail.msg %>
-        <%} %>
-        <div class="divs">Contraseña</div>
-        <input class="inp" type="password" placeholder="&#128273; Contraseña" id="password" name='password' onkeyup="check()" value="<%= locals.oldData ? oldData.password : null %>">
-        <% if (locals.errors && errors.password) { %>
-          <%= errors.password.msg %>
-        <%} %>
-        <div class="divs">Confirmar contraseña</div>
-        <input class="inp" type="password" placeholder="&#128273; Confirmar contraseña" id="passwordCheck" onkeyup="check()" >
-        <span id="message"></span>
-        <script>
-        let check = function() {
-            if (document.getElementById('password').value ==
-              document.getElementById('passwordCheck').value) {
-                document.getElementById('message').innerHTML = '';
-                document.getElementById('submit').disabled = false;
-            } else {
-              document.getElementById('message').style.color = 'red';
-              document.getElementById('message').innerHTML = 'Las contraseñas no son iguales';
-              document.getElementById('submit').disabled = true;
-            }
-          }
-        </script>
-        
-        <div class="divAddImages">
-            <label class="p-reg">Foto de perfil:</label>
-            <input name="avatar" type="file" multiple="multiple" class="p-reg" accept= ".jpg, .jpeg" id="avatar">
+          </a>
         </div>
-
-        <div>
-        <input class="inp-button" id="submit" type="submit" value="Registrate">
-        </div>
-
-        <p class="p-reg">¿Ya tenés cuenta? <a class= "link" href="login"> Ingresá</a></p>
-        
-    </form> 
-   <!-- Footer -->
-    <%- include('./partials/footer') %>
-    <script src="/js/validatorRegister.js"></script>
+        <h2 class="h2-log">Registrate</h2>
+        <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-register">
+          <div class="form-container">
+            <div class="errors">
+              <ul></ul>
+            </div>
+            
+            <!-- <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+              <p class="errores"><%= errors[oneError].msg %></p>
+            <% } %>
+            <%} %> -->
+            <label class="labell">
+              <div class="divs">
+                <p>Nombre</p>
+                <span class="p-reg">¿Ya tenés cuenta? <a class= "link" href="login"> Ingresá</a></span>
+              </div>
+              <input class="inp" type="text" placeholder="&#128100; Nombre" name="name" value="<%= locals.oldData ? oldData.name : null %>" id="name">
+              <% if (locals.errors && errors.name) { %>
+              <%= errors.name.msg %>
+              <%} %>
+            </label>
+            
+            <label class="labell">
+              <div class="divs">
+                <p>Apellido</p>
+              </div>
+              <input class="inp" type="text" placeholder="&#128100; Apellido" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>" id="lastName">
+              <% if (locals.errors && errors.lastName) { %>
+              <%= errors.lastName.msg %>
+              <%} %>
+            </label>
+            
+            <label class="labell">
+              <div class="divs"><p>Usuario</p></div>
+             <input class="inp" type="text" placeholder="&#128100; Usuario" name="userAlias" id="user">
+              <% if (locals.errors && errors.userAlias) { %>
+              <%= errors.userAlias.msg %>
+              <%} %>
+            </label>
+            
+            <label class="labell">
+              <div class="divs"><p>E-mail</p></div>
+              <input class="inp" type="email" placeholder="&#9993; E-mail" name="eMail" value="<%= locals.oldData ? oldData.eMail : null %>" id="email">
+              <% if (locals.errors && errors.eMail) { %>
+              <%= errors.eMail.msg %>
+              <%} %>
+            </label>
+            
+            <label class="labell">
+              <div class="divs"><p>Contraseña</p></div>
+              <input class="inp" type="password" placeholder="&#128273; Contraseña" id="password" name='password' onkeyup="check()" value="<%= locals.oldData ? oldData.password : null %>">
+              <% if (locals.errors && errors.password) { %>
+              <%= errors.password.msg %>
+              <%} %>
+            </label>
+            
+            <label class="labell">
+              <div class="divs"><p>Confirmar contraseña</p></div>
+              <input class="inp" type="password" placeholder="&#128273; Confirmar contraseña" id="passwordCheck" onkeyup="check()" >
+              <span id="message"></span>
+              <script>
+              let check = function() {
+                if (document.getElementById('password').value ==
+                   document.getElementById('passwordCheck').value) {
+                   document.getElementById('message').innerHTML = '';
+                   document.getElementById('submit').disabled = false;
+                } else {
+                   document.getElementById('message').style.color = 'red';
+                   document.getElementById('message').innerHTML = 'Las contraseñas no son iguales';
+                    document.getElementById('submit').disabled = true;
+                }
+              }
+            </script>
+            </label>
+            
+            <label class="labell">
+              <div class="divAddImages">
+                <label class="p-reg">Foto de perfil:</label>
+                <input name="avatar" type="file" multiple="multiple" class="p-img" accept= ".jpg, .jpeg" id="avatar">
+              </div>
+            </label>
+            <input class="inp-button" id="submit" type="submit" value="Registrate">
+          </div>
+          
+        </form>
+      </article>
+      <script src="/js/validatorRegister.js"></script>
+    </section>
 </body>
 </html>
