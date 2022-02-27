@@ -34,10 +34,10 @@ const productController = {
 	})
 	},
 
-	/*
+	
 	cart: (req, res) => {
 		res.render('cart');
-	},*/
+	},
 	
 	addProduct: (req, res) => {
 		res.render('addproduct');

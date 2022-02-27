@@ -144,11 +144,11 @@ body {
 }
 
 .inp-button:hover {
-    background-color: rgb(45, 77, 153);
+    background-color: rgb(116, 136, 184);
 }
 
 input[type="submit"]{
-    background-color: rgb(51 32 189) ;
+    background-color: rgb(78 65 171) ;
     border: 0;
     color: whitesmoke;
     opacity: 0.9;
