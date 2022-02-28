@@ -9,17 +9,21 @@ Detalle de productos:
 
 Nombre del negocio: Tienda Tech
 
-Tipografía del logo: 
-Enlace a Google Fonts: 
+Tipografía del logo: xxx
+Enlace a Google Fonts: xxx
 
-Color del logo: 
-Color de la tipografía: 
+Color del logo: xxx
+Color de la tipografía: xxx
+
 
 Integrantes del proyecto:
 
-D'Angelo, Lucio: 26 años, de Buenos Aires. Geek y gamer.
-Valeriano, Darío: 19 años, de Buenos Aires. Me gusta la música y soy estudiante de ingeniería en informática.
 Heidi Dubois: 45 años, de Venezuela pero vivo en Buenos Aires. Trabajo en el área de telemarketing y dedicandome a obtener nuevos conocimientos en el desarrollo web.
+
+Valeriano, Darío: 19 años, de Buenos Aires. Me gusta la música y soy estudiante de ingeniería en informática.
+
+D'Angelo, Lucio: 26 años, de Buenos Aires. Geek y gamer.
+
 
 Referencias para nuestro proyecto: 
 1- https://novastore.ar (Ecommerce Argentino con variedad de productos, un estilo claro,sencillo y entendible)
