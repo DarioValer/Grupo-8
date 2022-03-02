@@ -25,8 +25,19 @@
                 <div class="errors">
                     <ul></ul>
                   </div>
-                <input class="inp-add-prod" id="title" name="title" type="text" placeholder="Título" size="30" required>
-                <input class="inp-add-prod" id="description" name="shortDescription" type="text" placeholder="Descripción" size="200" required>
+                 <!-- <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+                <p class="errores"><%= errors[oneError].msg %></p>
+              <% } %>
+              <%} %> -->
+                <input class="inp-add-prod" id="title" name="title" type="text" placeholder="Título" size="30">
+                <% if (typeof errors != 'undefined' && typeof errors.title != 'undefined') { %>
+                    <span style="color: red"><%= errors.title.msg %></span> 
+                  <% } %>
+                <input class="inp-add-prod" id="description" name="shortDescription" type="text" placeholder="Descripción" size="200">
+                <% if (typeof errors != 'undefined' && typeof errors.shortDescription != 'undefined') { %>
+                    <span style="color: red"><%= errors.shortDescription.msg %></span> 
+                  <% } %>
 
                 <select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
                     <option disabled selected>Categoría</option>
@@ -39,7 +50,10 @@
                     <option value="1" selected>Novedad</option>
                 </select>
 
-                <input class="inp-add-prod" name="price" id="number" type="number" placeholder="Precio" required>
+                <input class="inp-add-prod" name="price" id="number"  placeholder="Precio" >
+                <% if (typeof errors != 'undefined' && typeof errors.price != 'undefined') { %>
+                    <span style="color: red"><%= errors.price.msg %></span> 
+                  <% } %>
 
             </div>
         

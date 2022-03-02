@@ -26,11 +26,22 @@
 						<div class="errors">
 							<ul></ul>
 						  </div>
+						<!-- <% if (locals.errors) { %>
+							<% for ( let oneError in errors ) { %>
+								<p class="errores"><%= errors[oneError].msg %></p>
+							  <% } %>
+							  <%} %> -->
 						<label for="title" class="form-label">Título</label>
 						<input class="inp-add-prod" type="text" id="title" name="title" size="30" value="<%=product.title%>">
+						<% if (typeof errors != 'undefined' && typeof errors.title != 'undefined') { %>
+							<span style="color: red"><%= errors.title.msg %></span> 
+						  <% } %>
 
 						<label for="descrip" class="form-label">Descripción</label>
-						<input class="inp-add-prod" type="text" id="descrip" name="descrip" size="200" value="<%=product.descrip%>">
+						<input class="inp-add-prod" type="text" id="descrip" name="shortDescription" size="200" value="<%=product.descrip%>">
+						<% if (typeof errors != 'undefined' && typeof errors.shortDescription != 'undefined') { %>
+							<span style="color: red"><%= errors.shortDescription.msg %></span> 
+						  <% } %>
 					
 						<select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
 							<option disabled selected>Categoría</option>
@@ -48,6 +59,9 @@
 
 						<label for="price" class="form-label">Precio</label>
 						<input class="inp-add-prod" type="number" id="price" name="price" value=<%=product.price%> class="form-input">
+						<% if (typeof errors != 'undefined' && typeof errors.price != 'undefined') { %>
+							<span style="color: red"><%= errors.price.msg %></span> 
+						  <% } %>
 					
 					<!--<div class="col-12 col-md-6">
 						<label for="discount" class="form-label">Descuento:</label>

@@ -2,6 +2,7 @@ const req = require("express/lib/request");
 const res = require("express/lib/response");
 const db = require('../database/models/index');
 const Product = require("../database/models/Product");
+const { validationResult } = require('express-validator');
 
 /*const { devNull } = require('os');
 const { title } = require('process');
@@ -44,16 +45,23 @@ const productController = {
 	},
 	
 	newProduct: (req, res) => {
+		const resultValidation = validationResult(req);
+		if (!resultValidation.errors.length) {
 		db.Product.create({
 			title: req.body.title,
 			price: parseFloat(req.body.price),
-			image: req.files[0].filename,
-			descrip: req.body.shortDescription,
+			//image: req.files[0].filename,
+			shortDescription: req.body.shortDescription,
 			StatusId: req.body.status,
 			CategoryId: req.body.category
 		})
-		res.redirect('/products');
-	},
+		.then( res.redirect('products'))
+		.catch(err => {res.send(err)})
+	} else { return res.render('addproduct', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });}
+        },
 
 	editProduct: (req, res) => {
 		db.Product.findByPk(req.params.id)
@@ -63,20 +71,29 @@ const productController = {
 	},
 	
 	update: (req, res) => {
+		const resultValidation = validationResult(req);
+		if (!resultValidation.errors.length) {
 		db.Product.update({
 			title: req.body.title,
 			price: parseFloat(req.body.price),
-			image: req.files[0].filename,
-			descrip: req.body.descrip,
+			//image: req.files[0].filename,
+			shortDescription: req.body.shortDescription,
 			StatusId: req.body.status,
 			CategoryId: req.body.category
-		}, {
+		},
+		{
 			where: {
 				id: req.params.id
 			},
 		})
-		res.redirect('/products')
+		.then( res.redirect('products'))
+		.catch(err => {res.send(err)})
+	} else { return res.render('addproduct', {
+		errors: resultValidation.mapped(),
+		oldData: req.body
+	});} 
 	},
+		
 /*
 	delete: (req, res) => {
 		db.Product.findByPk(req.params.id)
