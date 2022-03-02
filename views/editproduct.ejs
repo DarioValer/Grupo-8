@@ -17,12 +17,15 @@
     <section>
 			
 		<div class="form-addprod">
-			<form action="/products/editProduct/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+			<form action="/products/editProduct/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="form-editproduct">
 				<div class="form-edit-product">
 
 					<h2 class="products-title">Estás editando el producto <div class="product-title-toedit">"<%=product.title%>"</div></h2>
-
+					
 					<div class="part1">
+						<div class="errors">
+							<ul></ul>
+						  </div>
 						<label for="title" class="form-label">Título</label>
 						<input class="inp-add-prod" type="text" id="title" name="title" size="30" value="<%=product.title%>">
 
@@ -89,6 +92,8 @@
 
     <!-- Footer -->
     <%- include('./partials/footer') %>
+
+	<script src="/js/validatorEditproduct.js"></script>
 
 </body>
 </html>
