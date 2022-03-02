@@ -22,8 +22,11 @@
             <div><h2 class="h2-add-prod">Cargar nuevo producto</h2></div>
             
             <div class="part1">
+                <div class="errors">
+                    <ul></ul>
+                  </div>
                 <input class="inp-add-prod" id="title" name="title" type="text" placeholder="Título" size="30" required>
-                <input class="inp-add-prod" name="shortDescription" type="text" placeholder="Descripción" size="200" required>
+                <input class="inp-add-prod" id="description" name="shortDescription" type="text" placeholder="Descripción" size="200" required>
 
                 <select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
                     <option disabled selected>Categoría</option>
@@ -66,6 +69,6 @@
 <script src="/js/previewImg.js"></script>
     <!-- Footer -->
     <%- include('./partials/footer') %>
-
+    <script src="/js/validatorAddProduct.js"></script>
 </body>
 </html>
