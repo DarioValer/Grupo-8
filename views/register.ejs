@@ -47,9 +47,9 @@
                 <span class="p-reg">¿Ya tenés cuenta? <a class= "link" href="login"> Ingresá</a></span>
               </div>
               <input class="inp" type="text" placeholder="&#128100; Nombre" name="name" value="<%= locals.oldData ? oldData.name : null %>" id="name">
-              <% if (locals.errors && errors.name) { %>
-              <%= errors.name.msg %>
-              <%} %>
+              <% if (typeof errors != 'undefined' && typeof errors.name != 'undefined') { %>
+                <span style="color: red"><%= errors.name.msg %></span> 
+              <% } %>
             </label>
             
             <label class="labell">
@@ -57,24 +57,24 @@
                 <p>Apellido</p>
               </div>
               <input class="inp" type="text" placeholder="&#128100; Apellido" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>" id="lastName">
-              <% if (locals.errors && errors.lastName) { %>
-              <%= errors.lastName.msg %>
-              <%} %>
+              <% if (typeof errors != 'undefined' && typeof errors.lastName != 'undefined') { %>
+                <span style="color: red"><%= errors.lastName.msg %></span> 
+              <% } %>
             </label>
             
             <label class="labell">
               <div class="divs"><p>Usuario</p></div>
              <input class="inp" type="text" placeholder="&#128100; Usuario" name="userAlias" id="user">
-              <% if (locals.errors && errors.userAlias) { %>
-              <%= errors.userAlias.msg %>
-              <%} %>
+             <% if (locals.errors && errors.userAlias) { %>
+              <span style="color: red"><%= errors.userAlias.msg %></span>
+            <%} %>
             </label>
             
             <label class="labell">
               <div class="divs"><p>E-mail</p></div>
               <input class="inp" type="email" placeholder="&#9993; E-mail" name="eMail" value="<%= locals.oldData ? oldData.eMail : null %>" id="email">
               <% if (locals.errors && errors.eMail) { %>
-              <%= errors.eMail.msg %>
+                <span style="color: red"><%= errors.eMail.msg %></span>
               <%} %>
             </label>
             
@@ -82,7 +82,7 @@
               <div class="divs"><p>Contraseña</p></div>
               <input class="inp" type="password" placeholder="&#128273; Contraseña" id="password" name='password' onkeyup="check()" value="<%= locals.oldData ? oldData.password : null %>">
               <% if (locals.errors && errors.password) { %>
-              <%= errors.password.msg %>
+                <span style="color: red"><%= errors.password.msg %></span>
               <%} %>
             </label>
             
@@ -109,6 +109,9 @@
               <div class="divAddImages">
                 <label class="p-reg">Foto de perfil:</label>
                 <input name="avatar" type="file" multiple="multiple" class="p-img" accept= ".jpg, .jpeg" id="avatar">
+                <% if (locals.errors && errors.avatar) { %>
+                  <span style="color: red"><%= errors.avatar.msg %></span>
+                <%} %>
               </div>
             </label>
             <input class="inp-button" id="submit" type="submit" value="Registrate">

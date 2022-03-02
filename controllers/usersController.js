@@ -27,7 +27,7 @@ const usersController = {
                 user_alias: req.body.userAlias,
                 email: req.body.eMail,
                 pass: bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync()),
-                avatar: req.files.length ? req.files[0].filename : null,
+                // avatar: req.files.length ? req.files[0].filename : null,
                
             }).then(function(userlogon) {
                 req.session.userLogged = userlogon;
@@ -47,7 +47,7 @@ const usersController = {
                     oldData: req.body
             })} else {
                 
-                return res.render('login', {
+                return res.render('register', {
                     errors: resultValidation.mapped(),
                     oldData: req.body
                 });

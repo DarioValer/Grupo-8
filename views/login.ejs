@@ -43,14 +43,14 @@
                 
               <input class="inp" type="email" placeholder="&#9993; E-mail" name="eMail" id="email">
               <% if (locals.errors && errors.eMail) { %>
-                <%= errors.eMail.msg %>
+                <span style="color: red"><%= errors.eMail.msg %></span>
               <%} %>
               </label>
               <label class="labell" for="">
                 <div class="divs"><p>Contraseña</p></div>
               <input class="inp" type="password" placeholder="&#128273; Contraseña" name='password' id="password">
               <% if (locals.errors && errors.password) { %>
-                <%= errors.password.msg %>
+                <span style="color: red"><%= errors.password.msg %></span>
               <%} %>
               </label>
               <input class="inp-button" type="submit" id="submit" value="Ingresar">
