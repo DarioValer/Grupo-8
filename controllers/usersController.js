@@ -113,7 +113,9 @@ const usersController = {
     },
 
     update: (req, res) => {
-        db.user.findByPk(req.session.userLogged.id)
+        const resultValidation = validationResult(req);
+        if (!resultValidation.errors.lenght) {
+            db.user.findByPk(req.session.userLogged.id)
             .then(function (userlogon) {
                 userlogon.update({
                 
@@ -124,13 +126,19 @@ const usersController = {
                 // pass: bcryptjs.hashSync(req.body.password, genSaltSync()),
                 // avatar: req.files[0].filename,
 
+                }, { 
+                    where: {
+                        id: req.params.id
+                    }
                 }).then(userlogon => {
                     req.session.userLogged = userlogon;
                     res.redirect('/users/profile')
                 }).catch(function(e){
-                    res.render('error')
+                    res.send(e)
                 });
             })
+        }
+        
     },
 
     logout: (req, res) => {

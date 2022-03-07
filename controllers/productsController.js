@@ -46,7 +46,7 @@ const productController = {
 	
 	newProduct: (req, res) => {
 		const resultValidation = validationResult(req);
-		if (!resultValidation.errors.length) {
+		if (resultValidation.isEmpty()) {
 		db.Product.create({
 			title: req.body.title,
 			price: parseFloat(req.body.price),
@@ -72,7 +72,7 @@ const productController = {
 	
 	update: (req, res) => {
 		const resultValidation = validationResult(req);
-		if (!resultValidation.errors.length) {
+		if (resultValidation.isEmpty()) {
 		db.Product.update({
 			title: req.body.title,
 			price: parseFloat(req.body.price),
@@ -86,15 +86,27 @@ const productController = {
 				id: req.params.id
 			},
 		})
-		.then( res.redirect('products'))
-		.catch(err => {res.send(err)})
-	} else { return res.render('addproduct', {
-		errors: resultValidation.mapped(),
-		oldData: req.body
-	});} 
+		//.then( res.redirect('products'))
+		//.catch(err => {res.send(err)})
+		res.redirect('/products')
+	}
+
+	 else {
+		db.Product.findByPk(req.params.id)
+		.then(product => {
+			res.render('editproduct', {product, errors: resultValidation.mapped(),
+				oldData: req.body});
+		})
+		// let product = db.Product.findByPk(req.params.id)
+		// return res.render('editproduct', {
+		//product//,
+		//errors: resultValidation.mapped(),
+		//oldData: req.body
+	//});} 
+	}
 	},
 		
-/*
+	/*
 	delete: (req, res) => {
 		db.Product.findByPk(req.params.id)
 		.then(product => {

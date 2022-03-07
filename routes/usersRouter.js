@@ -16,7 +16,7 @@ router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', userLoggedMiddleware, validationsMiddleware, usersController.loginProcess);
 router.get('/profile', authMiddleware, usersController.profile)
 router.get('/profileToEdit/:id', authMiddleware, usersController.edit)
-router.put('/profileToEdit/:id', authMiddleware, uploadAvatar.any(), usersController.update)
+router.put('/profileToEdit/:id', validationsMiddleware, uploadAvatar.any(), usersController.update)
 router.get('/logout',  usersController.logout)
 //************ Register ************ 
 router.get('/register', guestMiddleware, usersController.register);

@@ -23,27 +23,44 @@
                 <form class="container-form" action="/users/profileToEdit/<%=locals.userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <h2 class="data-h2">Datos del perfil</h2>
                     <div class="data-user">
+                        <!-- <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+                <p class="errores"><%= errors[oneError].msg %></p>
+              <% } %>
+              <%} %> -->
                         <label class="data-user-lab">Nombre</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="text" name="name" value="<%= locals.userLogged.first_name %>" required>
+                            <input class="input-form" type="text" name="name" value="<%= locals.userLogged.first_name %>" required id="name">
+                            <% if (typeof errors != 'undefined' && typeof errors.name != 'undefined') { %>
+                                <span style="color: red"><%= errors.name.msg %></span> 
+                              <% } %>
                         </div>
                     </div>
                     <div class="data-user">
                         <label class="data-user-lab">Apellido</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="text" name="lastName" value="<%= locals.userLogged.last_name %>" required>
+                            <input class="input-form" type="text" name="lastName" value="<%= locals.userLogged.last_name %>" required id="lastName">
+                            <% if (typeof errors != 'undefined' && typeof errors.lastName != 'undefined') { %>
+                                <span style="color: red"><%= errors.lastName.msg %></span> 
+                              <% } %>
                         </div>
                     </div>
                     <div class="data-user">
                         <label class="data-user-lab">Usuario</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="text" name="userAlias" value="<%= locals.userLogged.user_alias %>" required>
+                            <input class="input-form" type="text" name="userAlias" value="<%= locals.userLogged.user_alias %>" required id="userAlias">
+                            <% if (locals.errors && errors.userAlias) { %>
+                                <span style="color: red"><%= errors.userAlias.msg %></span>
+                              <%} %>
                         </div>
                     </div>
                     <div class="data-user">
                         <label class="data-user-lab">E-Mail</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="email" name="eMail" value="<%= locals.userLogged.email %>" disabled selected required>
+                            <input class="input-form" type="email" name="eMail" value="<%= locals.userLogged.email %>" disabled selected required id="eMail">
+                            <% if (locals.errors && errors.eMail) { %>
+                                <span style="color: red"><%= errors.eMail.msg %></span>
+                              <%} %>
                         </div>
                     </div>
                     <input class="button" id="submit" type="submit" value="Guardar cambios">
