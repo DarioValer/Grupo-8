@@ -105,6 +105,7 @@ const productController = {
 	//});} 
 	}
 	},
+	//No estamos pudiendo renderizar desde el backend => EditProduct, EditUser. Las validaciones funcionan, solo falta en el Controler, la funcion UPDATE, que renderize editproduct/:id
 		
 	/*
 	delete: (req, res) => {

@@ -12,6 +12,11 @@
     <%- include('./partials/headerNavbar') %>
     
     <section class="user-profile">
+        <!-- <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+                <p class="errores"><%= errors[oneError].msg %></p>
+              <% } %>
+              <%} %> -->
         <div class="avatar-profile">
           <img class="profile-avatar" src="/img/avatars/<%= locals.userLogged.avatar || 'default-avatar.png' %>"  alt="avatar" width="100%" height="100%">    
         </div>

@@ -114,9 +114,10 @@ const usersController = {
 
     update: (req, res) => {
         const resultValidation = validationResult(req);
-        if (!resultValidation.errors.lenght) {
-            db.user.findByPk(req.session.userLogged.id)
-            .then(function (userlogon) {
+        db.user.findByPk(req.session.userLogged.id)
+
+                if (!resultValidation.errors.length) {
+                userlogon => {
                 userlogon.update({
                 
                 first_name: req.body.name,
@@ -133,13 +134,18 @@ const usersController = {
                 }).then(userlogon => {
                     req.session.userLogged = userlogon;
                     res.redirect('/users/profile')
-                }).catch(function(e){
-                    res.send(e)
+                }).catch(function(err){
+                    res.send(err)
+                })
+            }} else {
+                return res.render('register', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
                 });
-            })
-        }
-        
-    },
+                   }
+            },
+
+            //No estamos pudiendo renderizar desde el backend => EditProduct, EditUser. Las validaciones funcionan, solo falta en el Controler, la funcion UPDATE, que renderize editproduct/:id
 
     logout: (req, res) => {
         req.session.destroy();
