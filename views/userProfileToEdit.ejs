@@ -25,7 +25,7 @@
                 <h2 class="h2-prof">Bienvenido <div class="user-text"><%= locals.userLogged.user_alias %></div></h2>
           </div>
           <div class="container-2">
-                <form class="container-form" action="/users/profileToEdit/<%=locals.userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="container-form" action="/users/profileToEdit/<%=locals.userLogged.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <h2 class="data-h2">Datos del perfil</h2>
                     <div class="data-user">
                         <!-- <% if (locals.errors) { %>
@@ -35,7 +35,7 @@
               <%} %> -->
                         <label class="data-user-lab">Nombre</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="text" name="name" value="<%= locals.userLogged.first_name %>" required id="name">
+                            <input class="input-form" type="text" name="name" value="<%= locals.oldData ? oldData.name : null %>" id="name">
                             <% if (typeof errors != 'undefined' && typeof errors.name != 'undefined') { %>
                                 <span style="color: red"><%= errors.name.msg %></span> 
                               <% } %>
