@@ -20,7 +20,7 @@ body {
     margin-bottom: 20%;
     width: 90vw;
     max-width: 500px;
-    background-color: #f3f3f3;
+    background-color: white;
     padding: 30px;
     border: 1px solid rgba (0,0,0,0.2);
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
@@ -31,13 +31,18 @@ body {
 }
 
 .product-title-toedit {
-    background-color: rgb(167, 37, 37);
+    background-color: rgb(78 65 171);
     color: white;
     border-radius: 5px;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 8px;
+}
+
+.image-product-detail {
+    border: 1px black solid;
+    margin: 2%;
 }
 
 .part1 {
@@ -56,6 +61,9 @@ body {
     font-size: 130%;
     color: gray;
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+    background-color: transparent;
+    border: 1px solid hsla(0,0%,43.9%,.5019607843137255);
+    border-radius: 10px;
 }
 
 .images-to-add {
@@ -65,9 +73,11 @@ body {
 
 .inp-add-image {
     margin: auto;
-    width: 80px;
-    height: 70px;
     margin-bottom: 18px;
+}
+
+.inp-add-image img{
+    width: 100% !important;
 }
 
 .divAddImages {
@@ -75,7 +85,7 @@ body {
     margin: 30px 0;
     padding: 10px;
     width: 100%;
-    background-color: red;
+    background-color: rgb(78 65 171);
     border-radius: 10px;
     opacity: 0.8;
 }
@@ -104,7 +114,7 @@ body {
     margin-bottom: 12px;
     display: block;
     padding: 8px 10px;
-    background-color: red;
+    background-color: rgb(78 65 171);
     width: 70%;
     height: 50px;
     margin: 20px 0;
@@ -119,7 +129,7 @@ body {
 }
 
 .add-prod-button:hover {
-    background-color: rgb(255, 64, 64);
+    background-color: rgb(116, 136, 184);
 }
 
 .reset-prod-button {
@@ -141,7 +151,7 @@ body {
 }
 
 .reset-prod-button:hover {
-    background-color: rgb(255, 93, 64);
+    background-color: rgb(116, 136, 184);
 }
 
 .h2-add-prod {
@@ -157,6 +167,10 @@ body {
     margin: 10px 0;
     font-size: 20px;
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 1px solid hsla(0,0%,43.9%,.5019607843137255);
+    border-radius: 10px;
 }
 .inp-add-prod[type="submit"]{
     background-color: red ;
@@ -188,6 +202,20 @@ p {
     .form-edit-product {
         margin-top: 18%;
         margin-bottom: 14%;
+        max-width: 1000px;
+    }
+    .images-to-add {
+        display: block;
+    }
+
+    .inp-add-image {
+        margin: none;
+        width: auto;
+        height: auto;
+    }
+
+    .inp-add-image img{
+        width: 100% !important;
     }
 }
 
@@ -195,7 +223,29 @@ p {
     .form-edit-product {
         margin-top: 14%;
         margin-bottom: 10%;
+        max-width: 1000px;
     }
+
+    .container-1 {
+        display: flex;
+    }
+
+    .images-to-add {
+        display: block;
+        width: 200%;
+        margin: 2%;
+    }
+
+    .inp-add-image {
+        margin: none;
+        width: auto;
+        height: auto;
+    }
+
+    .inp-add-image img{
+        width: 100% !important;
+    }
+
 }
 
 @media(min-width: 1440px) {

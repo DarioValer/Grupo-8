@@ -20,71 +20,65 @@
         
         <div class="form-add-product">
             <div><h2 class="h2-add-prod">Cargar nuevo producto</h2></div>
-            
-            <div class="part1">
-                <div class="errors">
-                    <ul></ul>
-                  </div>
-                 <!-- <% if (locals.errors) { %>
-            <% for ( let oneError in errors ) { %>
-                <p class="errores"><%= errors[oneError].msg %></p>
-              <% } %>
-              <%} %> -->
-                <input class="inp-add-prod" id="title" name="title" type="text" placeholder="Título" size="30" value="<%= locals.oldData && oldData.title ? oldData.title:'' %>">
-                <% if (typeof errors != 'undefined' && typeof errors.title != 'undefined') { %>
-                    <span style="color: red"><%= errors.title.msg %></span> 
-                  <% } %>
-                <input class="inp-add-prod" id="description" name="shortDescription" type="text" placeholder="Descripción" size="200" value="<%= locals.oldData && oldData.shortDescription ? oldData.shortDescription:'' %>">
-                <% if (typeof errors != 'undefined' && typeof errors.shortDescription != 'undefined') { %>
-                    <span style="color: red"><%= errors.shortDescription.msg %></span> 
-                  <% } %>
-
-                <select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
-                    <option disabled selected>Categoría</option>
-                    <% 
-                      let categories = ['SMARTPHONES AND TABLETS', 'GAMER ARTICLES', 'ACCESORIES']
-                     %> 
-                    <% for (const oneCategory of categories) {  %>
-                        <option 
-                            value="<%= oneCategory %>"
-                            <%= locals.oldData && (oneCategory == oldData.category) ? 'selected' : null %> 
-                        > <%= oneCategory %> </option>  
-                     <% } %>   
-                    <!-- <option disabled selected>Categoría</option>
-                    <option value="1">SMARTPHONES AND TABLETS</option>
-                    <option value="2">GAMER ARTICLES</option>
-                    <option value="3">ACCESORIES</option> -->
-                </select>
-                <% if (typeof errors != 'undefined' && typeof errors.category != 'undefined') { %>
-                    <span style="color: red"><%= errors.category.msg %></span> 
-                  <% } %>
-
-                <select id="status" name="status" class="selectCategorias" required>
-                    <option value="1" selected>Novedad</option>
-                </select>
-
-                <input class="inp-add-prod" name="price" id="number"  placeholder="Precio" value="<%= locals.oldData && oldData.price ? oldData.price:'' %>">
-                <% if (typeof errors != 'undefined' && typeof errors.price != 'undefined') { %>
-                    <span style="color: red"><%= errors.price.msg %></span> 
-                  <% } %>
-
-            </div>
-        
-        
-            <div class="part2">
-                
-                <div class="divAddImages">
-                    <p class="textAddImages">Cargar imágenes</p>
-                    <input name="image" id="prod-image" type="file" multiple="multiple" class="addImages" accept= ".jpg, .jpeg .png" required>
-
-                    
-                </div>
-
+            <div class="container-1">
                 <div class="images-to-add">
-                   <div class="inp-add-image" type="" id="preview"> </div>
+                    <div class="inp-add-image" type="" id="preview"> </div>
+                 </div>
+                <div class="part1">
+                    <div class="errors">
+                        <ul></ul>
+                      </div>
+                     <!-- <% if (locals.errors) { %>
+                <% for ( let oneError in errors ) { %>
+                    <p class="errores"><%= errors[oneError].msg %></p>
+                  <% } %>
+                  <%} %> -->
+                    <input class="inp-add-prod" id="title" name="title" type="text" placeholder="Título" size="30" value="<%= locals.oldData && oldData.title ? oldData.title:'' %>">
+                    <% if (typeof errors != 'undefined' && typeof errors.title != 'undefined') { %>
+                        <span style="color: red"><%= errors.title.msg %></span> 
+                      <% } %>
+                    <input class="inp-add-prod" id="description" name="shortDescription" type="text" placeholder="Descripción" size="200" value="<%= locals.oldData && oldData.shortDescription ? oldData.shortDescription:'' %>">
+                    <% if (typeof errors != 'undefined' && typeof errors.shortDescription != 'undefined') { %>
+                        <span style="color: red"><%= errors.shortDescription.msg %></span> 
+                      <% } %>
+    
+                    <select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
+                        <option disabled selected>Categoría</option>
+                        <% 
+                          let categories = ['SMARTPHONES AND TABLETS', 'GAMER ARTICLES', 'ACCESORIES']
+                         %> 
+                        <% for (const oneCategory of categories) {  %>
+                            <option 
+                                value="<%= oneCategory %>"
+                                <%= locals.oldData && (oneCategory == oldData.category) ? 'selected' : null %> 
+                            > <%= oneCategory %> </option>  
+                         <% } %>   
+                        <!-- <option disabled selected>Categoría</option>
+                        <option value="1">SMARTPHONES AND TABLETS</option>
+                        <option value="2">GAMER ARTICLES</option>
+                        <option value="3">ACCESORIES</option> -->
+                    </select>
+                    <% if (typeof errors != 'undefined' && typeof errors.category != 'undefined') { %>
+                        <span style="color: red"><%= errors.category.msg %></span> 
+                      <% } %>
+    
+                    <select id="status" name="status" class="selectCategorias" required>
+                        <option value="1" selected>Novedad</option>
+                    </select>
+    
+                    <input class="inp-add-prod" name="price" id="number"  placeholder="Precio" value="<%= locals.oldData && oldData.price ? oldData.price:'' %>">
+                    <% if (typeof errors != 'undefined' && typeof errors.price != 'undefined') { %>
+                        <span style="color: red"><%= errors.price.msg %></span> 
+                      <% } %>
+    
+                      <div class="divAddImages">
+                        <p class="textAddImages">Cargar imágenes</p>
+                        <input name="image" id="prod-image" type="file" multiple="multiple" class="addImages" accept= ".jpg, .jpeg .png" required>
+                    </div>
                 </div>
             </div>
 
+            <div class="part2">
             <div >
                 <div><input class="add-prod-button" type="submit" name="submit" value="Agregar"></div>
                 <div><input class="reset-prod-button" type="reset" value="Borrar"></div>
