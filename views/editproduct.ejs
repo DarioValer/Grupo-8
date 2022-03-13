@@ -21,80 +21,62 @@
 				<div class="form-edit-product">
 
 					<h2 class="products-title">Estás editando el producto <div class="product-title-toedit">"<%=product.title%>"</div></h2>
-					<div class="container-1">
-						<!-- <img class="image-product-detail" src="/img/<%=product.image%>" alt="" width="45%" height="50%"> -->
-						<div class="images-to-add">
-							<div class="inp-add-image" type="" id="preview"> </div>
-						 </div>
-						<div class="part1">
-							<div class="errors">
-								<ul></ul>
-						  	</div>
-							<!-- <% if (locals.errors) { %>
-								<% for ( let oneError in errors ) { %>
-									<p class="errores"><%= errors[oneError].msg %></p>
-							 	 <% } %>
-								  <%} %> -->
-							<label for="title" class="form-label">Título</label>
-							<input class="inp-add-prod" type="text" id="title" name="title" size="30" value="<%=product.title%>">
-							<% if (typeof errors != 'undefined' && typeof errors.title != 'undefined') { %>
-								<span style="color: red"><%= errors.title.msg %></span> 
+					
+					<div class="part1">
+						<div class="errors">
+							<ul></ul>
+						  </div>
+						<!-- <% if (locals.errors) { %>
+							<% for ( let oneError in errors ) { %>
+								<p class="errores"><%= errors[oneError].msg %></p>
 							  <% } %>
+							  <%} %> -->
+						<label for="title" class="form-label">Título</label>
+						<input class="inp-add-prod" type="text" id="title" name="title" size="30" value="<%=product.title%>">
+						<% if (typeof errors != 'undefined' && typeof errors.title != 'undefined') { %>
+							<span style="color: red"><%= errors.title.msg %></span> 
+						  <% } %>
 
-							<label for="descrip" class="form-label">Descripción</label>
-							<input class="inp-add-prod" type="text" id="descrip" name="shortDescription" size="200" value="<%=product.descrip%>">
-							<% if (typeof errors != 'undefined' && typeof errors.shortDescription != 'undefined') { %>
-								<span style="color: red"><%= errors.shortDescription.msg %></span> 
-						  	<% } %>
+						<label for="descrip" class="form-label">Descripción</label>
+						<input class="inp-add-prod" type="text" id="descrip" name="descrip" size="200" value="<%=product.descrip%>">
+						<% if (typeof errors != 'undefined' && typeof errors.descrip != 'undefined') { %>
+							<span style="color: red"><%= errors.descrip.msg %></span> 
+						  <% } %>
 					
-							<select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
-								<option disabled selected>Categoría</option>
-								<% 
-								  let categories = ['SMARTPHONES AND TABLETS', 'GAMER ARTICLES', 'ACCESORIES']
-								 %> 
-								<% for (const oneCategory of categories) {  %>
-									<option 
-										value="<%= oneCategory %>"
-										<%= locals.oldData && (oneCategory == oldData.category) ? 'selected' : null %> 
-									> <%= oneCategory %> </option>  
-								 <% } %>   
-								<!-- <option disabled selected>Categoría</option>
-								<option value="1">SMARTPHONES AND TABLETS</option>
-								<option value="2">GAMER ARTICLES</option>
-								<option value="3">ACCESORIES</option> -->
-							</select>
-							<% if (typeof errors != 'undefined' && typeof errors.category != 'undefined') { %>
-								<span style="color: red"><%= errors.category.msg %></span> 
-						 	 <% } %>
-		
+						<select id="category" name="category" placeholder="Categoría" class="selectCategorias" required>
+							<option disabled selected>Categoría</option>
+							<option value="1">SMARTPHONES AND TABLETS</option>
+							<option value="2">GAMER ARTICLES</option>
+							<option value="3">ACCESORIES</option>
+						</select>
 
-							<select id="status" name="status" class="selectCategorias" required>
-								<option disabled selected>Estatus</option>
-								<option value="1">Novedad</option>
-								<option value="2">Oferta</option>
-								<option value="3">General</option>
-							</select>
+						<select id="status" name="status" class="selectCategorias" required>
+							<option disabled selected>Estatus</option>
+							<option value="1">Novedad</option>
+							<option value="2">Oferta</option>
+							<option value="3">General</option>
+						</select>
 
-							<label for="price" class="form-label">Precio</label>
-							<input class="inp-add-prod" type="number" id="price" name="price" value=<%=product.price%> class="form-input">
-							<% if (typeof errors != 'undefined' && typeof errors.price != 'undefined') { %>
-								<span style="color: red"><%= errors.price.msg %></span> 
-						 	 <% } %>
+						<label for="price" class="form-label">Precio</label>
+						<input class="inp-add-prod" type="number" id="price" name="price" value=<%=product.price%> class="form-input">
+						<% if (typeof errors != 'undefined' && typeof errors.price != 'undefined') { %>
+							<span style="color: red"><%= errors.price.msg %></span> 
+						  <% } %>
 					
-							<!--<div class="col-12 col-md-6">
-							<label for="discount" class="form-label">Descuento:</label>
-							<input type="number" id="discount" name="discountPercentage" value="<%=product.discountPercentage%>" class="form-input">
-							</div> -->
+					<!--<div class="col-12 col-md-6">
+						<label for="discount" class="form-label">Descuento:</label>
+						<input type="number" id="discount" name="discountPercentage" value="<%=product.discountPercentage%>" class="form-input">
+					</div> -->
 
-							<div class="divAddImages">
-								<p class="textAddImages">Cargar imágenes</p>
-								<input name="image" id="prod-image" type="file" multiple="multiple" class="addImages" accept= ".jpg, .jpeg .png" required>
-							</div>
-
-							
-						</div>
+					<div class="divAddImages">
+						<p class="textAddImages">Cargar imágenes</p>
+						<input name="image" id="prod-image" type="file" multiple="multiple" class="addImages" accept= ".jpg, .jpeg .png" required>
 					</div>
-					
+
+					<div class="images-to-add">
+						<div class="inp-add-image" type="" id="preview"> </div>
+					 </div>
+				    </div>
 
 					<div class="col-12">
 						<button type="submit" name="submit" class="add-prod-button">Guardar cambios</button>

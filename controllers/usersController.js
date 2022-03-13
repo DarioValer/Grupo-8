@@ -27,7 +27,8 @@ const usersController = {
                 user_alias: req.body.userAlias,
                 email: req.body.eMail,
                 pass: bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync()),
-                // avatar: req.files.length ? req.files[0].filename : null,
+                avatar: req.files[0].filename,
+                //avatar: req.files.length ? req.files[0].filename : null,
                
             }).then(function(userlogon) {
                 req.session.userLogged = userlogon;
@@ -113,46 +114,25 @@ const usersController = {
     },
 
     update: (req, res) => {
-        const resultValidation = validationResult(req);
-        //db.user.findByPk(req.session.userLogged.id)
-
-            if (!resultValidation.errors.length) {
-            //    userlogon => {
-                db.user.update({
+        db.user.findByPk(req.session.userLogged.id)
+            .then(function (userlogon) {
+                userlogon.update({
+                
                 first_name: req.body.name,
                 last_name: req.body.lastName,
                 user_alias: req.body.userAlias,
                 email: req.body.eMail,
                 // pass: bcryptjs.hashSync(req.body.password, genSaltSync()),
                 // avatar: req.files[0].filename,
-                }, 
-                { 
-                    where: {
-                        id: req.params.id
-                    }
-                })
-                res.redirect('/users/profile')
-                /*.then(userlogon => {
+
+                }).then(userlogon => {
                     req.session.userLogged = userlogon;
                     res.redirect('/users/profile')
-                })/*.catch(function(err){
-                    res.send(err)
-                })*/
-            //}
-            } else { db.user.findByPk(req.session.userLogged.id)
-                    .then(userLogged => {
-                        res.render('userProfileToEdit', {
-                            userLogged,
-                            errors: resultValidation.mapped(),
-                            oldData: req.body
-                        })
-                    })
-                    
-                }
-                console.log(resultValidation.errors)
-            },
-
-            //No estamos pudiendo renderizar desde el backend => EditProduct, EditUser. Las validaciones funcionan, solo falta en el Controler, la funcion UPDATE, que renderize editproduct/:id
+                }).catch(function(e){
+                    res.render('error')
+                });
+            })
+    },
 
     logout: (req, res) => {
         req.session.destroy();

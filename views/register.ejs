@@ -108,7 +108,7 @@
             <label class="labell">
               <div class="divAddImages">
                 <label class="p-reg">Foto de perfil:</label>
-                <input name="avatar" type="file" multiple="multiple" class="p-img" accept= ".jpg, .jpeg" id="avatar">
+                <input name="avatar" type="file" multiple="multiple" class="p-img" accept= ".jpg, .jpeg, .png, .gif" id="avatar">
                 <% if (locals.errors && errors.avatar) { %>
                   <span style="color: red"><%= errors.avatar.msg %></span>
                 <%} %>

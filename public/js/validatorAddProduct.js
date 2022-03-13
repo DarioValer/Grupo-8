@@ -1,32 +1,41 @@
-// /*window.addEventListener('load', function(){*/
-//     const formAddProduct = document.querySelector('form.form-addprod');
+ /*window.addEventListener('load', function(){*/
+ const formAddProduct = document.querySelector('form.form-addprod');
 
-//     /* AddProduct */
+ /* AddProduct */
 
-//     formAddProduct.addEventListener('submit', function(event){
+ formAddProduct.addEventListener('submit', function(event){
 
-//         let errors = [];
+     let errors = [];
 
-//         let inputTitle = document.querySelector('#title');
-//     if (inputTitle.value == '') {
-//         errors.push('Titulo es un Campo obligatorio')
-//     } else if (inputTitle.value.length < 5) {
-//         errors.push('El campo Titulo debe tener al menos 5 caracteres')
-//     }
+     let inputTitle = document.querySelector('#title');
+ if (inputTitle.value == '') {
+     errors.push('Titulo es un Campo obligatorio')
+ } else if (inputTitle.value.length < 5) {
+     errors.push('El campo Titulo debe tener al menos 5 caracteres')
+ }
 
-//     let inputDescription = document.querySelector('#description');
-//     if (inputDescription.value.length < 20) {
-//         errors.push('El campo Descripción debe tener al menos 20 caracteres')
-//     }
+ let inputDescription = document.querySelector('#description');
+ if (inputDescription.value.length < 20) {
+     errors.push('El campo Descripción debe tener al menos 20 caracteres')
+ }
 
-//     if(errors.length > 0){
-//         event.preventDefault();
-//         let ulError = document.querySelector('div.errors ul');
-//         for (let i = 0; i < errors.length; i++) {
-//             ulError.innerHTML += '<li>' + errors[i] + '</li>';
-//         }
-//     }
+ let inputPrice = document.querySelector('#number');
+ if (inputPrice.value == '') {
+     errors.push('Precio es un Campo obligatorio')
+ }
 
-//     })
-    
-// /*})*/
+ let inputCategory = document.querySelector('#category');
+ if (inputCategory.value == '') {
+     errors.push('Categoria es un Campo obligatorio')
+ }
+
+ if(errors.length > 0){
+     event.preventDefault();
+     let ulError = document.querySelector('div.errors ul');
+     for (let i = 0; i < errors.length; i++) {
+         ulError.innerHTML += '<li>' + errors[i] + '</li>';
+     }
+ }
+ })
+
+/*})*/

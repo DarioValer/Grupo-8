@@ -7,7 +7,7 @@ validationsMiddleware = [
     check('eMail').notEmpty().withMessage('Email es un Campo obligatorio').bail()
     .isEmail().withMessage("Debes escribir un formato de correo electronico valido"),
     check('password').notEmpty().withMessage('Contrasena es un Campo obligatorio').bail().isLength({ min: 8}).withMessage('La contrasena debera tener al menos 8 caracteres'),
-    // check('avatar').isIn(['jpg', 'jpeg', 'png', 'gif']).withMessage('Debera ser un archivo JPG, JPEG, PNG o GIF'),
+    //check('avatar').isIn(['jpg', 'jpeg', 'png', 'gif']).withMessage('Debera ser un archivo JPG, JPEG, PNG o GIF'),
 ];
 
 module.exports = validationsMiddleware;

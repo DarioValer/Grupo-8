@@ -45,22 +45,15 @@ const productController = {
 	},
 	
 	newProduct: (req, res) => {
-		const resultValidation = validationResult(req);
-		if (resultValidation.isEmpty()) {
 		db.Product.create({
 			title: req.body.title,
 			price: parseFloat(req.body.price),
-			//image: req.files[0].filename,
-			shortDescription: req.body.shortDescription,
+			image: req.files[0].filename,
+			descrip: req.body.descrip,
 			StatusId: req.body.status,
 			CategoryId: req.body.category
 		})
-		.then( res.redirect('products'))
-		.catch(err => {res.send(err)})
-	} else { return res.render('addproduct', {
-                    errors: resultValidation.mapped(),
-                    oldData: req.body
-                });}
+		res.redirect('/products');
         },
 
 	editProduct: (req, res) => {
@@ -71,13 +64,11 @@ const productController = {
 	},
 	
 	update: (req, res) => {
-		const resultValidation = validationResult(req);
-		if (resultValidation.isEmpty()) {
 		db.Product.update({
 			title: req.body.title,
 			price: parseFloat(req.body.price),
-			//image: req.files[0].filename,
-			shortDescription: req.body.shortDescription,
+			image: req.files[0].filename,
+			descrip: req.body.descrip,
 			StatusId: req.body.status,
 			CategoryId: req.body.category
 		},
@@ -86,28 +77,11 @@ const productController = {
 				id: req.params.id
 			},
 		})
-		//.then( res.redirect('products'))
-		//.catch(err => {res.send(err)})
 		res.redirect('/products')
-	}
-
-	 else {
-		db.Product.findByPk(req.params.id)
-		.then(product => {
-			res.render('editproduct', {product, errors: resultValidation.mapped(),
-				oldData: req.body});
-		})
-		// let product = db.Product.findByPk(req.params.id)
-		// return res.render('editproduct', {
-		//product//,
-		//errors: resultValidation.mapped(),
-		//oldData: req.body
-	//});} 
-	}
-	},
+		},
 	//No estamos pudiendo renderizar desde el backend => EditProduct, EditUser. Las validaciones funcionan, solo falta en el Controler, la funcion UPDATE, que renderize editproduct/:id
 		
-	/*
+/*
 	delete: (req, res) => {
 		db.Product.findByPk(req.params.id)
 		.then(product => {
