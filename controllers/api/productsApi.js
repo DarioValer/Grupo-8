@@ -1,23 +1,24 @@
-const db =require('../../database/models/');
-const sequelize = db.Sequelize;
+const db = require('../../database/models/index');
 
-const usersControllerApi = {
-    users: (req,res)=>{
-        db.user.findAll()
-            .then(users=>{
+const apiProductsController23 = {
+    products: (req,res)=>{
+        db.Product.findAll()
+            .then(products=>{
                 let answer = {
                     meta: {
                         status: 200,
-                        total: users.length,
-                        url: '/api/users'
+                        total: products.length,
+                        url: '/api/products'
                     },
-                    data: users.map(user => {
+                    data: products.map(product => {
                         return{
-                            id: user.id,
-                            first_name: user.first_name,
-                            email: user.email,
-                            avatar: '/img/avatars/' + user.avatar,
-                            detail: '/api/users/' + user.id
+                            id: product.id,
+                            title: product.title,
+                            descrip: product.descrip,
+							//StatusId: product.StatusId,
+							//CategoryId: product.CategoryId,
+                            // image: '/img/' + product.image,
+                            detail: '/api/products/' + product.id
                         }
                     })
                 }
@@ -27,14 +28,14 @@ const usersControllerApi = {
                 res.send(err)
             })
     },
-    usersDetail: (req,res) => {
-        db.user.findByPk(req.params.id)
+    productsDetail: (req,res) => {
+        db.Product.findByPk(req.params.id)
         .then(user=>{
             let answer = {
                 meta:{
                     status: 200,
-                    total: user.id,
-                    url: "/api/users/" + user.id
+                    total: product.id,
+                    url: "/api/products/" + product.id
                 },
                 data: {
                         id: user.id,
@@ -50,6 +51,7 @@ const usersControllerApi = {
             res.send('Este Id no corresponde a un usuario registrado')
         })
     }
+
 }
 
-module.exports = usersControllerApi;
+module.exports = apiProductsController23;
