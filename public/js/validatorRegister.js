@@ -1,9 +1,9 @@
 /*window.addEventListener('load', function(){*/
-const formRegister = document.querySelector('form.form-register');
+/*const formRegister = document.querySelector('form.form-register');
 
 /* REGISTER */
 
-formRegister.addEventListener('submit', function(event){
+/*/formRegister.addEventListener('submit', function(event){
 
 let errors = [];
 let inputName = document.querySelector('#name');
@@ -76,7 +76,7 @@ if (inputAvatar.value) {
     }
 } */
 
-if(errors.length > 0){
+/*if(errors.length > 0){
     event.preventDefault();
     let ulErrors = document.querySelector('div.errors ul');
     for (let i = 0; i < errors.length; i++) {

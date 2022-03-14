@@ -1,9 +1,9 @@
  /*window.addEventListener('load', function(){*/
- const formEditproduct = document.querySelector('form.form-editproduct');
+ /*const formEditproduct = document.querySelector('form.form-editproduct');
 
  /* PRODUCT */
 
- formEditproduct.addEventListener('submit', function(event){
+ /*formEditproduct.addEventListener('submit', function(event){
 
      let errors = [];
 

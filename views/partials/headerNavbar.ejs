@@ -12,8 +12,8 @@
           <% } %>
           <a href="/products">Catálogo</a>
           <a href="#" class="search-button">Buscar</a>
-          <form action="#" class="search-box">
-            <input type="text" placeholder="Buscar...">
+          <form action="/products/search" class="search-box" method="POST">
+            <input type="text" name="title" placeholder="Buscar...">
             <button type="submit" class="go-icon"><i class="fas fa-search"></i></button>
           </form>
           <%  if (locals.isLogged) { %>

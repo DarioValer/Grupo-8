@@ -23,6 +23,7 @@ router.get('/editProduct/:id', authMiddleware, productController.editProduct);
 router.put('/editProduct/:id', authMiddleware, upload.any(), validationsMiddlewareAddProduct, productController.update); 
 router.get('/detail/:id', productController.detail);
 router.delete('/editProduct/:id', productController.destroy);
+router.post('/search', productController.search);
 
 
 module.exports = router;
