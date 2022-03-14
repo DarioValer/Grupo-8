@@ -29,6 +29,18 @@
      errors.push('Categoria es un Campo obligatorio')
  }
 
+ let imageInput = document.querySelector("#avatar");
+ let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+ let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
+ if(imageInput.value != ""){
+    if(!allowedExtensions.exec(imageInput.value)){
+        errors.image = `Los tipos de archivos permitidos son ${acceptedExtensions.join(', ')}`;
+    }
+}
+
+
+
+
  if(errors.length > 0){
      event.preventDefault();
      let ulError = document.querySelector('div.errors ul');
