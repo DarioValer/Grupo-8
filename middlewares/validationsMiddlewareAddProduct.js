@@ -6,6 +6,7 @@ validationsMiddlewareAddProduct = [
    // check('image').notEmpty().isIn(['jpg', 'jpeg', 'png', 'gif']).withMessage('Debera ser un archivo JPG, JPEG, PNG o GIF'),
     check('price').notEmpty().withMessage('Precio es un Campo obligatorio').isNumeric().withMessage('Su Precio debera ser numerico'),
     check('category').notEmpty().withMessage('Debes elegir una Categoria'),
+    check('status').notEmpty().withMessage('Debes elegir un estado'),
 ];
 
 module.exports = validationsMiddlewareAddProduct;

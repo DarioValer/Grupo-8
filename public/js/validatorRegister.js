@@ -1,43 +1,76 @@
 /*window.addEventListener('load', function(){*/
-/*const formRegister = document.querySelector('form.form-register');
+const formRegister = document.querySelector('form.form-register');
 
 /* REGISTER */
 
-/*/formRegister.addEventListener('submit', function(event){
+formRegister.addEventListener('submit', function(event){
 
 let errors = [];
 let inputName = document.querySelector('#name');
+let errorName = document.getElementById("errorName");
 if (inputName.value == '') {
-    errors.push('Nombre es un Campo obligatorio')
+    errorName.innerHTML = ''
+    //errors.push('Nombre es un Campo obligatorio')
+    errorName.innerHTML = "Nombre es un Campo obligatorio wey";
 } else if (inputName.value.length < 2) {
-    errors.push('El campo Nombre debe tener al menos 2 caracteres')
+    errorName.innerHTML = ''
+    errorName.innerHTML = "El campo Nombre debe tener al menos 2 caracteres";
+    //errors.push('El campo Nombre debe tener al menos 2 caracteres')
+} else {
+    errorName.innerHTML = ''
 }
 
 
 let inputLastName = document.querySelector('#lastName');
+let errorLastName = document.getElementById("errorLastName")
 if(inputLastName.value == '') {
-    errors.push('Apellido es un Campo obligatorio')
+    errorLastName.innerHTML = ''
+    errorLastName.innerHTML = 'Apellido es un Campo obligatorio'
+   // errors.push('Apellido es un Campo obligatorio')
 } else if (inputLastName.value.length < 2) {
-    errors.push('El campo Apellido debe tener al menos 2 caracteres')
+    errorLastName.innerHTML = '';
+    errorLastName.innerHTML = 'El campo Apellido debe tener al menos 2 caracteres'
+    //errors.push('El campo Apellido debe tener al menos 2 caracteres')
+} else {
+    errorLastName.innerHTML = ''
 }
 
 let inputUser = document.querySelector('#user');
+let errorUser = document.getElementById("errorUser");
 if (inputUser.value == '') {
-    errors.push('Usuario es un Campo obligatorio')
-} 
+    errorUser.innerHTML = ''
+    errorUser.innerHTML = 'Usuario es un Campo obligatorio'
+   // errors.push('Usuario es un Campo obligatorio')
+} else {
+    errorUser.innerHTML = ''
+}
 
 let inputEmail = document.querySelector('#email');
-if (inputEmail.value == '') {
-    errors.push('Email es un Campo obligatorio')
-} 
+let errorEmail = document.getElementById("errorEmail");
+if (inputEmail.value == '' ) {
+    errorEmail.innerHTML = ''
+    errorEmail.innerHTML = 'Email es un Campo obligatorio'
+    // errors.push('Email es un Campo obligatorio')
+} else {
+    errorEmail.innerHTML = ''
+}
 
 let inputPassword = document.querySelector('#password');
+let errorPassword = document.getElementById("errorPassword");
 if (inputPassword.value == '') {
-    errors.push('Contrasena es un Campo obligatorio')
+    errorPassword.innerHTML = ''
+    errorPassword.innerHTML = 'Contrasena es un Campo obligatorio'
+    //errors.push('Contrasena es un Campo obligatorio')
 } else if (inputPassword.value.length < 2) {
-    errors.push('El campo Contrasena debe tener al menos 8 caracteres')
+    errorPassword.innerHTML = '';
+    errorPassword.innerHTML = 'El campo Contrasena debe tener al menos 8 caracteres'
+    //errors.push('El campo Contrasena debe tener al menos 8 caracteres')
 } else if (inputPassword.value.indexOf(number) == -1) {
-    errors.push('El campo Contrasena debe tener al menos un número')
+    errorPassword.innerHTML = '';
+    errorPassword.innerHTML = 'El campo Contrasena debe tener al menos un número'
+    //errors.push('El campo Contrasena debe tener al menos un número')
+} else {
+    errorPassword.innerHTML = '';
 }
 
     /*let fileInput = document.getElementById('file');*/
@@ -79,9 +112,11 @@ if (inputAvatar.value) {
 /*if(errors.length > 0){
     event.preventDefault();
     let ulErrors = document.querySelector('div.errors ul');
+    ulErrors.innerHTML = ''
     for (let i = 0; i < errors.length; i++) {
         ulErrors.innerHTML += '<li>' + errors[i] + '</li>'
     }
-}
+}*/
+event.preventDefault();
 })
 /*})*/

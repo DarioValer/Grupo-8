@@ -99,15 +99,53 @@ const productController = {
 			res.render('editproduct', {product});
 		})
 	},
+
+	update:(req, res) => {
+		const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			db.Product.findByPk(req.params.id)
+	   		.then(product => {
+		   return res.render('editproduct', {product, errors: resultValidation.mapped(),
+			   oldData: req.body});
+		   })	
+			.catch(err => {
+				res.send(err)
+			})
+			console.log(resultValidation.errors)
+		} 
+		else {
+			db.Product.update({
+				title: req.body.title,
+				price: parseFloat(req.body.price),
+				image: req.files[0].filename,
+				descrip: req.body.shortDescription,
+				StatusId: req.body.status,
+				CategoryId: req.body.category
+			 },{
+					where: {
+						id: req.params.id
+					},
+				})
+			
+			/*.then(products => {
+				res.render("product",{products})
+			})
+			.catch(err => {
+				res.send(err)
+			});*/
+			//console.log(errors)
+			res.redirect('/products')
+		}
+	}, 
 	
-	update: (req, res) => {
+	/*update: (req, res) => {
 		const resultValidation = validationResult(req);
 		if (resultValidation.isEmpty()) {
 		db.Product.update({
 			title: req.body.title,
 			price: parseFloat(req.body.price),
-			//image: req.files[0].filename,
-			shortDescription: req.body.shortDescription,
+			image: req.files[0].filename,
+			descrip: req.body.shortDescription,
 			StatusId: req.body.status,
 			CategoryId: req.body.category
 		},
@@ -118,9 +156,7 @@ const productController = {
 		})
 		res.redirect('/products')
 		
-	
 	}
-
 	else {
 	   db.Product.findByPk(req.params.id)
 	   .then(product => {

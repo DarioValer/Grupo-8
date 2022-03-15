@@ -50,6 +50,7 @@
               <% if (typeof errors != 'undefined' && typeof errors.name != 'undefined') { %>
                 <span style="color: red"><%= errors.name.msg %></span> 
               <% } %>
+              <div id="errorName" class="errors"></div>
             </label>
             
             <label class="labell">
@@ -60,6 +61,7 @@
               <% if (typeof errors != 'undefined' && typeof errors.lastName != 'undefined') { %>
                 <span style="color: red"><%= errors.lastName.msg %></span> 
               <% } %>
+              <div id="errorLastName" class="errors"></div>
             </label>
             
             <label class="labell">
@@ -68,6 +70,7 @@
              <% if (locals.errors && errors.userAlias) { %>
               <span style="color: red"><%= errors.userAlias.msg %></span>
             <%} %>
+            <div id="errorUser" class="errors"></div>
             </label>
             
             <label class="labell">
@@ -76,6 +79,7 @@
               <% if (locals.errors && errors.eMail) { %>
                 <span style="color: red"><%= errors.eMail.msg %></span>
               <%} %>
+              <div id="errorEmail" class="errors"></div>
             </label>
             
             <label class="labell">
@@ -84,6 +88,7 @@
               <% if (locals.errors && errors.password) { %>
                 <span style="color: red"><%= errors.password.msg %></span>
               <%} %>
+              <div id="errorPassword" class="errors"></div>
             </label>
             
             <label class="labell">
@@ -112,6 +117,7 @@
                 <% if (locals.errors && errors.avatar) { %>
                   <span style="color: red"><%= errors.avatar.msg %></span>
                 <%} %>
+                <div id="errorImage" class="errors"></div>
               </div>
             </label>
             <input class="inp-button" id="submit" type="submit" value="Registrate">
