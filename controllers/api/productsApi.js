@@ -4,18 +4,34 @@ const apiProductsController23 = {
     products: (req,res)=>{
         db.Product.findAll()
             .then(products=>{
+               /* db.Status.findAll()
+                        .then (status => {
+                           console.log(status)
+                           console.log(status.dataValues.name)
+                        })*/
+                //let novedad1 = product.filter(product => product.StatusId == 1)
+                
                 let answer = {
                     meta: {
                         status: 200,
                         total: products.length,
                         url: '/api/products'
                     },
-                    data: products.map(product => {
+
+                    data:
+
+                     products.map(product => {
+                        //let state = db.Status.findByPk(id)
+                        //.then (status => {console.log(status)})*/
+                        /*if (product.StatusId == state.id){
+                            const statuss =  state.name
+                        }*/
                         return{
                             id: product.id,
                             title: product.title,
                             descrip: product.descrip,
-							//StatusId: product.StatusId,
+                            Status: product.StatusId,
+							//Productproduct.StatusId,
 							//CategoryId: product.CategoryId,
                             // image: '/img/' + product.image,
                             detail: '/api/products/' + product.id
@@ -30,7 +46,7 @@ const apiProductsController23 = {
     },
     productsDetail: (req,res) => {
         db.Product.findByPk(req.params.id)
-        .then(user=>{
+        .then(product=>{
             let answer = {
                 meta:{
                     status: 200,
@@ -38,11 +54,14 @@ const apiProductsController23 = {
                     url: "/api/products/" + product.id
                 },
                 data: {
-                        id: user.id,
-                        first_name: user.first_name,
-                        email: user.email,
-                        avatar: '/img/avatars/' + user.avatar,
-                        detail: '/api/users/' + user.id
+                    id: product.id,
+                    title: product.title,
+                    descrip: product.descrip,
+                    Status: product.StatusId,
+                    //Productproduct.StatusId,
+                    //CategoryId: product.CategoryId,
+                    // image: '/img/' + product.image,
+                    detail: '/api/products/' + product.id
                     }
                 }
                 res.json(answer)
