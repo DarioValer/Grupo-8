@@ -1,51 +1,66 @@
 const db = require('../../database/models/index');
 
 const apiProductsController23 = {
-    products: (req,res)=>{
+    products:(req,res)=>{
         db.Product.findAll()
-            .then(products=>{
-               /* db.Status.findAll()
-                        .then (status => {
-                           console.log(status)
-                           console.log(status.dataValues.name)
-                        })*/
-                //let novedad1 = product.filter(product => product.StatusId == 1)
-                
-                let answer = {
-                    meta: {
-                        status: 200,
-                        total: products.length,
-                        url: '/api/products'
-                    },
+        .then(categories => {
 
-                    data:
+        db.Product.findAll({
+        include:['Status','Category']
+    })
+        .then(products=>{
+            
+            let Categoria1 = products.filter(products => products.CategoryId == 1)
+            let Categoria2 = products.filter(products => products.CategoryId == 2)
+            let Categoria3 = products.filter(products => products.CategoryId == 3)
 
-                     products.map(product => {
-                        //let state = db.Status.findByPk(id)
-                        //.then (status => {console.log(status)})*/
-                        /*if (product.StatusId == state.id){
-                            const statuss =  state.name
-                        }*/
-                        return{
-                            id: product.id,
-                            title: product.title,
-                            descrip: product.descrip,
-                            Status: product.StatusId,
-							//Productproduct.StatusId,
-							//CategoryId: product.CategoryId,
-                            // image: '/img/' + product.image,
-                            detail: '/api/products/' + product.id
-                        }
-                    })
-                }
+            let Status1 = products.filter(products => products.CategoryId == 1)
+            let Status2 = products.filter(products => products.CategoryId == 2)
+            let Status3 = products.filter(products => products.CategoryId == 3)
+
+
+            let answer = {
+                meta: {
+                    status: 200,
+                    total: products.length,
+                    url: '/api/products',
+                    countByCategory : [
+                        {smartphonesAndTablets: Categoria1.length},
+                        {gamerArticles: Categoria2.length},
+                        {accesories: Categoria3.length}
+                    ],
+                    countByStatus : [
+                        {novelties: Status1.length},
+                        {offers: Status2.length},
+                        {general: Status3.length}
+                    ]
+                },
+                data: products.map(product => {
+                    return{
+                        id: product.id,
+                        title: product.title,
+                        descrip: product.descrip,
+                        status: {name:product.Status.name},
+                        category: {name:product.Category.name},
+                        image: '/img/' + product.image,
+                        detail: '/api/products/' + product.id
+                    }
+                })
+            }
+        
             res.json(answer)
-            })
-            .catch(err => {
-                res.send(err)
-            })
+        })    
+        })
+        .catch(err => {
+            res.send(err)
+        })
     },
+
+
     productsDetail: (req,res) => {
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id, {
+            include:['Status','Category']
+        })
         .then(product=>{
             let answer = {
                 meta:{
@@ -57,17 +72,16 @@ const apiProductsController23 = {
                     id: product.id,
                     title: product.title,
                     descrip: product.descrip,
-                    Status: product.StatusId,
-                    //Productproduct.StatusId,
-                    //CategoryId: product.CategoryId,
-                    // image: '/img/' + product.image,
+                    status: {name:product.Status.name},
+                    category: {name:product.Category.name},
+                    image: '/img/' + product.image,
                     detail: '/api/products/' + product.id
                     }
                 }
                 res.json(answer)
         })
         .catch(err => {
-            res.send('Este Id no corresponde a un usuario registrado')
+            res.send('Este Id no corresponde a un producto registrado')
         })
     }
 
