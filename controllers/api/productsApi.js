@@ -6,7 +6,9 @@ const apiProductsController23 = {
         .then(categories => {
 
         db.Product.findAll({
-        include:['Status','Category']
+        include:['Status','Category'],
+        order:[["id", "ASC"]],
+        limit:10
     })
         .then(products=>{
             

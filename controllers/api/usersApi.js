@@ -3,7 +3,7 @@ const sequelize = db.Sequelize;
 
 const usersControllerApi = {
     users: (req,res)=>{
-        db.user.findAll()
+        db.user.findAll({order:[["id", "ASC"]], limit:10})
             .then(users=>{
                 let answer = {
                     meta: {
