@@ -19,9 +19,10 @@
         
         <h3 class="banner-prods">Catálogo de productos</h3>
         
-    <div class="main-container-prods">
+    <div class="main-container-prods" id="<%=products[i].id%>">
         <% for (let i = 0; i < products.length; i++){%>
-        <a href="/products/detail/<%=products[i].id%>" class="link-ref"><article class="display-product">
+        <a href="/products/detail/<%=products[i].id%>" class="link-ref">
+        <article class="display-product">
         <h4 class="title-prod"><%=products[i].title%></h4>
         <div class="title-overlay title-overlay--blur">
               <p class="p-overlay"><%=products[i].title%></p>
@@ -38,12 +39,15 @@
         </div>
         
     </article></a>
+    <input id="<%=products[i].id%>" class="add-to-cart" type="submit" value="Agregar al carrito">
     <%}%>
     </div>
     </section> 
 
     <!-- Footer -->
     <%- include('./partials/footer') %>
+    <script src="/js/cart.js"></script>
+    <script src="/js/order.js"></script>
 
 </body>
 </html>

@@ -36,7 +36,8 @@
                         <option value="5">
                 </datalist>
 
-                <a href="/products/cart?_method=PUT" class="link-ref"><input class="detail-button" type="submit" value="Agregar al carrito"></a>
+                <!-- <a href="/products/cart?_method=PUT" class="link-ref">-->
+                    <input class="add-to-cart" type="submit" value="Agregar al carrito"> <!-- </a> --> 
 
                 <%  if (locals.isLogged) { %>
                 <div class="col-12">
@@ -52,6 +53,7 @@
     <!-- Footer -->
     <%- include('./partials/footer') %>
 
-
+    <script src="/js/cart.js"></script>
+    <script src="/js/order.js"></script>
 </body>
 </html>
