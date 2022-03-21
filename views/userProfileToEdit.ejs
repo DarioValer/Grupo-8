@@ -10,8 +10,7 @@
 <body>  
     <!-- Navbar -->
     <%- include('./partials/headerNavbar') %>
-    
-    <!-- <section class="user-profile">
+    <section class="user-profile">
         <!-- <% if (locals.errors) { %>
             <% for ( let oneError in errors ) { %>
                 <p class="errores"><%= errors[oneError].msg %></p>
@@ -25,33 +24,33 @@
                 <h2 class="h2-prof">Bienvenido <div class="user-text"><%= locals.userLogged.user_alias %></div></h2>
           </div>
           <div class="container-2">
-                <form class="container-form" action="/users/profileToEdit/<%=locals.userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="form-container" action="/users/profileToEdit/<%=locals.userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <h2 class="data-h2">Datos del perfil</h2>
                     <div class="data-user">
-                        <label class="data-user-lab">Nombre</label>
+                        <label for="name" class="data-user-lab">Nombre</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="text" name="name" value="<%= locals.userLogged.first_name %>" required>
+                            <input id="name" class="input-form" type="text" name="name" value="<%= locals.userLogged.first_name %>" required>
                             <% if (typeof errors != 'undefined' && typeof errors.name != 'undefined') { %>
                                 <span style="color: red"><%= errors.name.msg %></span> 
                               <% } %>
                         </div>
                     </div>
                     <div class="data-user">
-                        <label class="data-user-lab">Apellido</label>
+                        <label for="lastName" class="data-user-lab">Apellido</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="text" name="lastName" value="<%= locals.userLogged.last_name %>" required>
+                            <input id="lastName" class="input-form" type="text" name="lastName" value="<%= locals.userLogged.last_name %>" required>
                         </div>
                     </div>
                     <div class="data-user">
-                        <label class="data-user-lab">Usuario</label>
+                        <label for="userAlias" class="data-user-lab">Usuario</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="text" name="userAlias" value="<%= locals.userLogged.user_alias %>" required>
+                            <input id="userAlias" class="input-form" type="text" name="userAlias" value="<%= locals.userLogged.user_alias %>" required>
                         </div>
                     </div>
                     <div class="data-user">
-                        <label class="data-user-lab">E-Mail</label>
+                        <label for="email" class="data-user-lab">E-Mail</label>
                         <div class="data-user-div">
-                            <input class="input-form" type="email" name="eMail" value="<%= locals.userLogged.email %>" disabled selected required>
+                            <input id="email" class="input-form" type="email" name="eMail" value="<%= locals.userLogged.email %>" disabled selected required>
                         </div>
                     </div>
                     <input class="button" id="submit" type="submit" value="Guardar cambios">
@@ -61,7 +60,7 @@
         
       
       
-      </section> -->
+      </section> 
 
     <!-- <form class="container-form" action="/users/profileToEdit/<%=locals.userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <h2 class="h2-prof-edit">Datos a modificar</h2>

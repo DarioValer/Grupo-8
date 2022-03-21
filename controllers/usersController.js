@@ -113,7 +113,7 @@ const usersController = {
         })
     },
 
-    update: (req, res) => {
+   /* update: (req, res) => {
         db.user.findByPk(req.session.userLogged.id)
             .then(function (userlogon) {
                 userlogon.update({
@@ -123,7 +123,7 @@ const usersController = {
                 user_alias: req.body.userAlias,
                 email: req.body.eMail,
                 // pass: bcryptjs.hashSync(req.body.password, genSaltSync()),
-                // avatar: req.files[0].filename,
+                avatar: req.files[0].filename,
 
                 }).then(userlogon => {
                     req.session.userLogged = userlogon;
@@ -132,7 +132,45 @@ const usersController = {
                     res.render('error')
                 });
             })
-    },
+    },*/
+
+    update:(req, res) => {
+		const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			db.user.findByPk(req.session.userLogged.id)
+	   		.then(userlogon => {
+		   return res.render('userProfileToEdit', {userlogon, errors: resultValidation.mapped(),
+			   oldData: req.body});
+		   })	
+			.catch(err => {
+				res.send(err)
+			})
+			console.log(resultValidation.errors)
+		} 
+		else {
+			db.user.findByPk(req.session.userLogged.id).update({
+				first_name: req.body.name,
+                last_name: req.body.lastName,
+                user_alias: req.body.userAlias,
+                email: req.body.eMail,
+                // pass: bcryptjs.hashSync(req.body.password, genSaltSync()),
+                avatar: req.files[0].filename,
+			 },{
+					where: {
+						id: req.session.userLogged.id
+					},
+				})
+			
+			/*.then(products => {
+				res.render("product",{products})
+			})
+			.catch(err => {
+				res.send(err)
+			});*/
+			//console.log(errors)
+			res.redirect('/users/profile')
+		}
+	},
 
     logout: (req, res) => {
         req.session.destroy();
