@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-03-2022 a las 15:35:21
+-- Tiempo de generación: 21-03-2022 a las 02:52:08
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.9
 
@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `mydb`
 --
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `mydb`;
+/*CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `mydb`;*/
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,8 @@ INSERT INTO `product` (`id`, `title`, `price`, `image`, `descrip`, `StatusId`, `
 (36, 'Apple iPhone 11', '200000', 'image-1644491438988.jpg', 'Graba videos 4K y captura retratos espectaculares y paisajes increíbles con el sistema de dos cámaras. Toma grandes fotos con poca luz gracias al modo Noche. Disfruta colores reales en las fotos, videos y juegos con la pantalla Liquid Retina de 6.1 pulgadas.', 1, 1),
 (37, 'Apple iPad (9G)', '94000', 'image-1644491870744.jpg', 'Lleno de potencia, muy fácil de usar y versátil. El nuevo iPad viene con una espectacular pantalla Retina de 10.2 pulgadas, el potente chip A13 Bionic y una cámara frontal ultra gran angular con Encuadre Centrado.', 1, 1),
 (38, 'Razer Huntsman', '13000', 'image-1644492223986.jpg', 'Teclado gamer inalámbrico Razer Huntsman Mini QWERTY Razer Purple inglés US color negro con luz RGB.', 2, 3),
-(39, 'Sony PlayStation 5', '230000', 'image-1644493095115.jpg', 'Con tu consola PlayStation 5 tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.', 3, 2);
+(39, 'Sony PlayStation 5', '230000', 'image-1644493095115.jpg', 'Con tu consola PlayStation 5 tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.', 3, 2),
+(48, 'Producto 25', '2025', 'image-1647391945756.jpg', 'xdxdxdxdxdxdxdxdxdxdxdxdxdxd ayuda', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `first_name`, `last_name`, `user_alias`, `email`, `pass`, `avatar`) VALUES
 (15, 'aaa', 'aaa', 'aaa', 'aguspotter@gmail.com', '$2a$10$d36nCRUJJ6HZC25HeA6ewOkLlFtnVCGdiPH54i1IfIKkn2GDNncO2', 'default-avatar.png'),
-(17, 'Bruno', 'Braconi', 'brbr22', 'brunorbraconi@hotmail.com', '$2a$10$l5rfyt9pIzRoEf41pVJvoeAiktxyT9tYwPqDzM17m5ku5lb6UIfCO', NULL);
+(17, 'Bruno', 'Braconi', 'brbr22', 'brunorbraconi@hotmail.com', '$2a$10$l5rfyt9pIzRoEf41pVJvoeAiktxyT9tYwPqDzM17m5ku5lb6UIfCO', NULL),
+(18, 'elpepe', 'xdxdxd', 'ironmango', 'darioman@gmail.com', '$2a$10$H0sQsRwas8GpcCdaQP5maOYPopsLsV.oT6RU8WFuoH17WCjFK/A9C', NULL),
+(19, 'Dario A', 'Valeriano', 'dariovalerr', 'dariovaler@gmail.com', '$2a$10$vd8gm/fznprhDi6Ctpsk2ewU5eJD9J4QUXGJtSic4WzVC8Cnv/et2', 'avatar-1647273588479.png');
 
 --
 -- Índices para tablas volcadas
@@ -160,7 +163,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `status`
@@ -172,7 +175,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
