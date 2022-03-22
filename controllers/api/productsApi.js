@@ -43,7 +43,7 @@ const apiProductsController23 = {
                         title: product.title,
                         descrip: product.descrip,
                         status: {name:product.Status.name},
-                        category: {name:product.Category.name},
+                        //category: {name:product.Category.name},
                         image: '/img/' + product.image,
                         detail: '/api/products/' + product.id
                     }
@@ -75,7 +75,7 @@ const apiProductsController23 = {
                     title: product.title,
                     descrip: product.descrip,
                     status: {name:product.Status.name},
-                    category: {name:product.Category.name},
+                    //category: {name:product.Category.name},
                     image: '/img/' + product.image,
                     detail: '/api/products/' + product.id
                     }
