@@ -4,6 +4,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser')
+const cors = require('cors')
 // ************ express() ************
 const app = express();
 app.use(express.json()); 
@@ -38,6 +39,15 @@ app.use ('/api/products', apiProductsRouter);
 const apiUsersRouter = require('./routes/api/usersRouterApi');
 app.use('/api/users', apiUsersRouter);
 
+//Cors
+app.use(cors());
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
 
 
 app.use ((req, res, next) => {
