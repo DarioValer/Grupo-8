@@ -9,10 +9,12 @@ document.getElementById("prod-image").onchange = function(e) {
     reader.onload = function(){
       let preview = document.getElementById('preview'),
               image = document.createElement('img');
-            image.style.width= '80px'
+            image.classList.add('profile-avatar');
+            image.setAttribute('id','profile-avatar')
       image.src = reader.result;
-      let container1 = document.getElementById('container-1')
-      container1.classList.add('container-1')
+      let previousImg = document.getElementById('profile-avatar')
+      previousImg.classList.remove('profile-avatar')
+      previousImg.classList.add('previous-img')
 
       preview.innerHTML = '';
       preview.append(image);

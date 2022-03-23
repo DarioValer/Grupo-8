@@ -76,6 +76,10 @@ body {
     margin-bottom: 18px;
 }
 
+.previous-img {
+    display: none;
+}
+
 .inp-add-image img{
     width: 100% !important;
 }
@@ -226,10 +230,6 @@ p {
         max-width: 1000px;
     }
 
-    .container-1 {
-        display: flex;
-    }
-
     .images-to-add {
         display: block;
         width: 200%;
@@ -244,6 +244,10 @@ p {
 
     .inp-add-image img{
         width: 100% !important;
+    }
+
+    #container-1 {
+        display: flex;
     }
 
 }

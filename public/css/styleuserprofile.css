@@ -52,6 +52,7 @@ body {
     margin-bottom: 11%;
 }
 
+
 .container-2 {
     margin: auto;
     justify-content: center;
@@ -146,6 +147,30 @@ body {
     border: none;
 }
 
+.labell {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.p-reg {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(78 65 171);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: lightgrey;
+    width: 100%;
+}
+
+.p-img {
+    font-size: 17px;
+    width: 100%;
+    display: none;
+}
+
 
 
 /* MEDIA QUERIES */
@@ -169,8 +194,8 @@ body {
         margin-right: 5%;
     }
     .avatar-profile {
-        width: 30%;
-        height: 35vw;
+        /*width: 30%;*/
+        height: 30vh;
     }
     .button-form {
         padding: 1%;
@@ -187,6 +212,10 @@ body {
         margin: auto;
         width: 210px;
         height: 210px;
+    }
+
+    .containerrr {
+        width: 30%;
     }
 
     .container-0 {
@@ -208,10 +237,11 @@ body {
     .user-profile {
         margin-top: 5%;
     }
+    
     .avatar-profile {
-        width: 40vw;
         height: 28vw;
     }
+
     .profile-avatar {
         width: 280px;
         height: 280px;
