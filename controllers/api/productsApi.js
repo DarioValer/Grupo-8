@@ -1,6 +1,6 @@
 const db = require('../../database/models/index');
 
-const apiProductsController23 = {
+const apiProductsController = {
     products:(req,res)=>{
         db.Product.findAll()
         .then(categories => {
@@ -89,4 +89,4 @@ const apiProductsController23 = {
 
 }
 
-module.exports = apiProductsController23;
+module.exports = apiProductsController;
