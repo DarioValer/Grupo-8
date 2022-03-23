@@ -3,24 +3,28 @@ const sequelize = db.Sequelize;
 
 const usersControllerApi = {
     users: (req,res)=>{
-        db.user.findAll({order:[["id", "ASC"]], limit:10})
+        db.user.findAll({attributes: ['id', 'first_name', 'last_name', 'user_alias', 'email', 'avatar' ]})
+        //{order:[["id", "ASC"]], limit:10}
             .then(users=>{
-                let answer = {
-                    meta: {
-                        status: 200,
-                        total: users.length,
-                        url: '/api/users'
-                    },
-                    data: users.map(user => {
-                        return{
-                            id: user.id,
-                            first_name: user.first_name,
-                            email: user.email,
-                            avatar: '/img/avatars/' + user.avatar,
-                            detail: '/api/users/' + user.id
-                        }
-                    })
-                }
+                 let answer = {
+                        count: users.length,
+                        users: users,
+                         }
+                //     meta: {
+                //         status: 200,
+                //         total: users.length,
+                //         url: '/api/users'
+                //     },
+                //     data: users.map(user => {
+                //         return{
+                //             id: user.id,
+                //             first_name: user.first_name,
+                //             email: user.email,
+                //             avatar: '/img/avatars/' + user.avatar,
+                //             detail: '/api/users/' + user.id
+                //         }
+                //     })
+                 
             res.json(answer)
             })
             .catch(err => {
