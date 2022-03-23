@@ -15,18 +15,25 @@ body {
 
 .mainHeader {
     display: flex;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .banner {
     width: 100%;
     z-index: 1;
-    position: absolute;
-    display: none;
+    position: relative;
+    /* display: none; */
+    /*right: 10%;*/
+    /*bottom: 41px;*/
 }
 
-.novelties {
+
+/*.novelties {
     margin-top:-7.5%;
+}*/
+
+.boxstats {
+    margin: 10px 0px;
 }
 
 h3 {
@@ -243,6 +250,16 @@ h5 {
     margin-top: 5px;
 }
 
+#map-icon {
+    position: relative;
+    left: 75px;
+}
+
+#cellphone-icon {
+    position: relative;
+    right: 46px;
+}
+
 @keyframes aumentar {
     0% { transform: scale(1) }
     100% { transform: scale(1.1) }
@@ -267,6 +284,20 @@ h5 {
         position: absolute;
         display: block;
         cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .group-stats {
+        display: grid;
+    }
+
+    .mainHeader {
+        margin-top: 100px;
+    }
+
+    .menu a {
+        margin: 0 20px;
     }
 }
 
@@ -292,10 +323,9 @@ h5 {
     width: 100%;
     max-width: 2000px;
     margin: auto;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
-    padding: 45px 0px;
+    padding: 10px 10px;
     text-align: center;
     align-items: center;
 }

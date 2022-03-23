@@ -21,7 +21,7 @@
         
     <div class="main-container-prods">
         <% for (let i = 0; i < products.length; i++){%>
-        <a href="/products/detail/<%=products[i].id%>" class="link-ref">
+        <a id="product-link" href="/products/detail/<%=products[i].id%>" class="link-ref">
         <article class="display-product">
         <h4 class="title-prod"><%=products[i].title%></h4>
         <div class="title-overlay title-overlay--blur">

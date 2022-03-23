@@ -3,23 +3,28 @@
     <nav class="desktop-nav">
       <div class="container">
 
-        <h1>Digital Tech</h1>
-        
+        <!--<h1>Digital Tech</h1>-->
+        <div class="logo-content-l">
+          <a href="/" class="logo-letras-content">
+            <div class="logo-letras-content">
+              <img class="logoLetras" src="/img/logoLetras.png" alt="">
+            </div>
+          </a>
+        </div>
         <div class="menu">
           <%  if (!locals.isLogged) { %>
-          <a href="/users/login" class="hideWhenLogged">Ingresar</a>
-          <a href="/users/register" class="hideWhenLogged">Registrarse</a>
+          <a href="/users/login" id="a-nav-login">Ingresar</a>
+          <a href="/users/register" id="a-nav-register" >Registrarse</a>
           <% } %>
-          <a href="/products">Catálogo</a>
-          <a href="#" class="search-button">Buscar</a>
+          <a href="/products" id="a-nav-catalogo">Catálogo</a>
           <form action="/products/search" class="search-box" method="POST">
             <input type="text" name="title" placeholder="Buscar...">
             <button type="submit" class="go-icon"><i class="fas fa-search"></i></button>
           </form>
+          <a href="#" class="search-button">Buscar</a>
           <%  if (locals.isLogged) { %>
           <a href="#">Carrito</a>
           <% } %>
-          <a href="/">Home</a>
         </div>
         
         <%  if (locals.isLogged) { %>

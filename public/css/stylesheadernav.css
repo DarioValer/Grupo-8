@@ -29,6 +29,25 @@ h1 {
     font-weight: 900;
 }
 
+.logo-content-l {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-letras-content {
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.logoLetras {
+    height: 160px;
+    /*width: 160%;*/
+}
+
 .hamburger {
     display: block;
     position: relative;
@@ -140,11 +159,11 @@ h1 {
 
 .menu a:hover {
     background-color: white;
-    color: rgb(167, 37, 37);
+    color: rgb(23 18 60);
 }
 
 .menu .active-search {
-    /*margin: 0px 28px;*/
+    margin: 0px 80px 0px 0px;
     transition: 0.4s;
     transform: initial;
     width: 64px;
@@ -155,8 +174,12 @@ h1 {
     left: 37%;
 }
 
+.a-nav {
+    display: none;
+}
+
 .search-box{
-    position: absolute;
+    /*position: absolute;*/
     height: 100%;
     max-width: calc(100%-40px);
     /*width: 75%;
@@ -182,7 +205,7 @@ h1 {
     position: absolute;
     right: 1%;
     top: 0;
-    background-color:rgb(167, 37, 37);
+    background-color:rgb(23 18 60);
     text-decoration: none;
     border: none;
     outline: none;
@@ -199,7 +222,7 @@ h1 {
 
 .go-icon :hover{
     background-color: white;
-    color: rgb(167, 37, 37);
+    color: rgb(23 18 60);
 }
 
 
@@ -244,7 +267,9 @@ h1 {
 
     .search-box {
         right: 21%;
+        width: 50%;
     }
+
 }
 
 @media(min-width: 1440px) {
@@ -254,5 +279,6 @@ h1 {
 
     .search-box {
         right: 15%;
+        width: 40%;
     }
 }

@@ -229,6 +229,10 @@ h5 {
     margin-top: 5px;
 }
 
+.add-to-cart {
+    display: none;
+}
+
 /* MEDIA QUERIES */
 
 @media(min-width: 768px) {
@@ -240,6 +244,23 @@ h5 {
 @media(min-width: 1024px) {
     .novelties-prods {
         margin-top: 7.5%;
+    }
+    
+    .main-container-prods {
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+        align-items: flex-start;
+        display: flex;
+        justify-content: none;
+    }
+
+    #product-link {
+        width: 25%;
+    }
+
+    .display-product {
+        min-width: 250px;
     }
 }
 

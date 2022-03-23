@@ -11,10 +11,10 @@ document.getElementById("prod-image").onchange = function(e) {
               image = document.createElement('img');
             image.style.width= '80px'
       image.src = reader.result;
+      let container1 = document.getElementById('container-1')
+      container1.classList.add('container-1')
+
       preview.innerHTML = '';
       preview.append(image);
     };
   }
-
-  
-  

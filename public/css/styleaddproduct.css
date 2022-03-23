@@ -17,7 +17,6 @@ body {
 .form-add-product {
     margin: auto;
     margin-top: 25%;
-    margin-bottom: 20%;
     width: 90vw;
     max-width: 500px;
     background-color: white;
@@ -29,6 +28,11 @@ body {
 .part1 {
     display: flex;
     flex-direction: column;
+}
+
+.part2 {
+    max-width: 1000px;
+    margin: auto;
 }
 
 .description {
@@ -182,7 +186,7 @@ p {
 @media(min-width: 768px) { 
     .form-add-product {
         margin-top: 18%;
-        margin-bottom: 14%;
+        margin-bottom: 5%;
         max-width: 1000px;
     }
 
@@ -204,7 +208,6 @@ p {
 @media(min-width: 1024px) {
     .form-add-product {
         margin-top: 14%;
-        margin-bottom: 10%;
         max-width: 1000px;
     }
 
@@ -231,7 +234,7 @@ p {
 
 @media(min-width: 1440px) {
     .form-add-product {
-        margin-top: 8%;
-        margin-bottom: 5%;
+        margin-top: 130px;
+        margin-bottom: 50px;
     }
 }
