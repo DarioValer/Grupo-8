@@ -12,6 +12,7 @@ const validationsMiddlewareAddProduct = require('../middlewares/validationsMiddl
 
 router.get('/', productController.index);
 router.get('/cart', productController.cart);
+router.get('/gracias', productController.gracias);
 
 // ************ Add Product ************ 
 router.get('/addProduct', authMiddleware, productController.addProduct);

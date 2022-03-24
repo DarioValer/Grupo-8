@@ -2,28 +2,28 @@
 
     <nav class="desktop-nav">
       <div class="container">
-
-        <!--<h1>Digital Tech</h1>-->
-        <div class="logo-content-l">
+         <div class="logo-content-l">
           <a href="/" class="logo-letras-content">
             <div class="logo-letras-content">
               <img class="logoLetras" src="/img/logoLetras.png" alt="">
             </div>
           </a>
         </div>
+        
         <div class="menu">
           <%  if (!locals.isLogged) { %>
-          <a href="/users/login" id="a-nav-login">Ingresar</a>
-          <a href="/users/register" id="a-nav-register" >Registrarse</a>
+            <a href="/users/login" id="a-nav-login">Ingresar</a>
+            <a href="/users/register" id="a-nav-register" >Registrarse</a>
           <% } %>
           <a href="/products" id="a-nav-catalogo">Catálogo</a>
+          
           <form action="/products/search" class="search-box" method="POST">
-            <input type="text" name="title" placeholder="Buscar...">
+            <input type="text" placeholder="Buscar..." name="title" class="placeholder-search">
             <button type="submit" class="go-icon"><i class="fas fa-search"></i></button>
           </form>
           <a href="#" class="search-button">Buscar</a>
           <%  if (locals.isLogged) { %>
-          <a href="#">Carrito</a>
+          <a href="/products/cart" >Carrito </a><span class="cart-counter" name="cart-item-counter" id="cart-item-counter"></span>
           <% } %>
         </div>
         
@@ -36,11 +36,8 @@
           <span></span>
           <span></span>
         </button>
-  
       </div>
-
     </nav>
-
     <nav class="mobile-nav">
       <%  if (locals.isLogged) { %>
       <div class="profileImageMobile">
@@ -48,16 +45,19 @@
       </div>
       <% } %>
       <%  if (!locals.isLogged) { %>
-      <a href="/users/login" id="myLinks">Ingresar</a>
-      <a href="/users/register" id="myLinks">Registrarse</a>
+      <a class="mobile-nav-buttons" href="/users/login" id="myLinks">Ingresar</a>
+      <a class="mobile-nav-buttons" href="/users/register" id="myLinks">Registrarse</a>
       <% } %>
-      <a href="/products">Catálogo</a>
-      <a href="#">Buscar</a>
+      <a class="mobile-nav-buttons" href="/products">Catálogo</a>
+      <a class="mobile-nav-buttons-search" href="#">Buscar</a>
+      <form action="/products/search" class="search-box-mobile" method="POST">
+        <input type="text" placeholder="Buscar..." name="title" class="placeholder-search-mobile">
+        <button type="submit" class="go-icon"><i class="fas fa-search"></i></button>
+      </form>
       <%  if (locals.isLogged) { %>
-        <a href="#">Carrito</a>
+        <a class="mobile-nav-buttons" href="/products/cart">Carrito</a>
       <% } %>
-      <a href="/">Home</a>
     </nav>
 
     <script src="/js/main.js"></script>
-    
+    <script src="/js/addToCart.js"></script>

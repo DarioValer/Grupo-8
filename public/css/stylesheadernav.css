@@ -116,6 +116,35 @@ h1 {
     left: 0;
 }
 
+.mobile-nav-buttons {
+    display: block;
+    text-align: center;
+    margin: 0 auto 16px;
+    padding: 12px 16px;
+    background-color: rgb(167, 37, 37);
+    width: 75%;
+    max-width: 200px;
+
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.mobile-nav-buttons-search {
+    display: block;
+    text-align: center;
+    margin: 0 auto 16px;
+    padding: 12px 16px;
+    background-color: rgb(167, 37, 37);
+    width: 75%;
+    max-width: 200px;
+
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+
 .mobile-nav a {
     display: block;
     text-align: center;

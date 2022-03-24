@@ -6,166 +6,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=MedievalSharp&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/stylescarrito.css">
+    <link rel="stylesheet" href="/css/stylescart.css">
     <title>Carrito</title>
 </head>
 <body>
-        <!-- Navbar -->
-        <%-include('./partials/headerNavbar')%>
+    <!-- Navbar -->
+    <%-include('./partials/headerNavbar')%>
 
-    <section  class="ar">
-        <article>
-            <article class= "title">
-                <h2>
-                    Mi Carrito</i>
-                </h2>
-            </article>
-        </article>
-        <article class="art1">
-            <article class="art">
-                <div class="article-category">
-                    <span class="column1">Producto</span>
-                    <span class="column2">Precio</span>
-                    <span class="column3">Cantidad</span>
-                    <span class="column4">Total</span>
-                </div>
-                <div class="additions">
-                <ul>
-                    <li class="item">
-                        <div class= "infoitem">
-                            <div class="box-image">
-                                <div class="image">
-                                    <img src="/img/juegoTheWalkingDead.jpg" alt="juegoTheWalkingDead" class="image">
-                                </div>
-                            </div>
-                            <span class="items">
-                                <span class="itemproduct">
-                                    <span class="product">
-                                        <a href="" class="nameproduct">The Walking Dead</a>
-                                    </span>
-                                        <span class="values">
-                                            <span class="price">$7.500</span>
-                                            <span class="last-price">$8.000</span>
-                                        </span>
-                                    <span class="itemquantity">
-                                        <span class="selectorquantity">
-                                            <button class="button">
-                                                - 
-                                            </button>
-                                            <span>1</span>
-                                            <button class="button">
-                                                +
-                                            </button>
-                                        </span>
-                                    </span>
-                                    <span>$7.500</span>
-                                    <button>
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                </span>
-                            </span>
-                        </div>
-                       
-                    </li>
-                    <li class="item">
-                        <div class= "infoitem">
-                            <div class="box-image">
-                                <div class="image">
-                                    <img src="/img/juegoAlien.jpg" alt="juegoAlien" class="image">
-                                </div>
-                            </div>
-                            <span class="items">
-                                <span class="itemproduct">
-                                    <span class="product">
-                                        <a href="" class="nameproduct">Alien: El juego oficial</a>
-                                    </span>
-                                        <span class="values">
-                                            <span class="price">$5.550</span>
-                                            <span class="last-price">$6.000</span>
-                                        </span>
-                                    <span class="itemquantity">
-                                        <span class="selectorquantity">
-                                            <button class="button">
-                                                - 
-                                            </button>
-                                            <span>1</span>
-                                            <button class="button">
-                                                +
-                                            </button>
-                                        </span>
-                                    </span>
-                                    <span>$5.500</span>
-                                    <button>
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                </span>
-                            </span>
-                        </div>
-                       
-                    </li>
-                </ul>
-                 
-                </div>
-            </article>
-            <article class="article-box">
-                <div class="box">
-                    <div class="box-summary">
-                        <div class="box-totals">
-                            <ul class="box-body">
-                                <li class="box-summary-line">
-                                    <span class="subtotal">Subtotal  </span>
-                                    <span class="value subt">$13.050</span>
-                                </li>
-                                <li class="box-summary-line">
-                                    <span class="subtotal">Impuestos</span>
-                                    <span class="value">+ $624</span>
-                                </li>
-                                <li class="box-summary-line">
-                                    <span class="discount">Descuento</span>
-                                    <span class="value">   $$</span>
-                                </li>
-                            </ul>
-                            <div class="area-cupon">
-                                <div class="center-cupon">
-                                    <div class="cupon-desc">
-                                        <span><input type="text" placeholder=" Cupón de descuento" class="inp-discount"></span>
-                                        <span><button class="add">Añadir</button></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="checkout">
-                             <div class="total-total">
-                                <span class="grand-totaal">Grand Total</span>
-                                <span class="grand-total-price">$13674</span>
-                            </div>
-                            <div class="box-checkout">
-                                <div>
-                                    <button class="finish-button">
-                                        <a href="">Finalizar Compra</a>
-                                    </button>
-                                </div>
-                            </div>
-                            </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </article>
-        <article class="continue-shopping">
-            <button class="continue-shopping-button">
-                <a href="/" class="continue-shopping-words"><i class="fas fa-angle-double-left"></i> Continuar comprando</a>
-            </button>
-        </article>
+    <section class="main-container-detail-cart">
+
+    
+</section>
+<div class="total-amount">
 
 
-    </section>
+</div>
+
+
      <!-- Footer -->
     <%- include('./partials/footer') %>
-    
     <script src="/js/cart.js"></script>
-    <script src="/js/order.js"></script>
-
-
-
 </body>
 </html>

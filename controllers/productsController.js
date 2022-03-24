@@ -23,6 +23,10 @@ const productController = {
 
 		})
 	},
+
+	gracias: (req, res) => {
+		res.render('gracias');
+	},
 	
 	detail: (req, res) => {
 		db.Product.findByPk(req.params.id, {
