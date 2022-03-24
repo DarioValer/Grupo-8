@@ -69,6 +69,7 @@ body {
     flex-direction: column;
     width: 100%;
     background-color: #fff;
+    padding: 5%;
 }
 
 .product-name {
@@ -95,7 +96,31 @@ body {
 .description-detail {
     margin-bottom: 12px;
     align-items: stretch;
+    border-bottom: 1px solid #f0f0f0;
 }
+
+.info {
+    display: flex;
+    margin: 10%;
+}
+
+.icon-info {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.container-cards {
+    width: 80%;
+}
+
+.icon-cards {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
 
 .quantity-and-cart-block {
     margin-bottom: 8px;
@@ -132,6 +157,18 @@ body {
 .p-detail {
     padding: 5px;
     font-size: 15px;
+}
+
+.container-detail {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    background-color: #fff;
+    padding: 5%;
+    justify-content: center;
+    max-width: 1700px;
+    margin: auto;
+    margin-bottom: 15%;
 }
 
 /* MEDIA QUERIES */
