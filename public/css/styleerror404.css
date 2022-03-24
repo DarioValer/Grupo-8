@@ -34,7 +34,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     background-color: white;
-    color: rgb(167, 37, 37);
+    color:  #17123C;
     padding: 8px 10px;
     border-radius: 5px;
     border: none;
@@ -43,8 +43,8 @@ body {
 }
 
 .button:hover {
-    background-color: #ffba00;
-    color: rgb(167, 37, 37);
+    background-color: #17123C;
+    color: white;
     padding: 8px 10px;
     border-radius: 5px;
     font-size: 18px;
