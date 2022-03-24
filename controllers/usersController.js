@@ -135,7 +135,7 @@ const usersController = {
     },*/
 
     update:(req, res) => {
-		const resultValidation = validationResult(req);
+		/*const resultValidation = validationResult(req);
 		if (resultValidation.errors.length > 0) {
 			db.user.findByPk(req.session.userLogged.id)
 	   		.then(userlogon => {
@@ -147,14 +147,14 @@ const usersController = {
 			})
 			console.log(resultValidation.errors)
 		} 
-		else {
-			db.user.findByPk(req.session.userLogged.id).update({
+		else {*/
+			/*db.user.findByPk(req.session.userLogged.id).update({
 				first_name: req.body.name,
                 last_name: req.body.lastName,
                 user_alias: req.body.userAlias,
                 email: req.body.eMail,
                 // pass: bcryptjs.hashSync(req.body.password, genSaltSync()),
-                avatar: req.files[0].filename,
+                //avatar: req.files[0].filename,
 			 },{
 					where: {
 						id: req.session.userLogged.id
@@ -168,8 +168,29 @@ const usersController = {
 				res.send(err)
 			});*/
 			//console.log(errors)
-			res.redirect('/users/profile')
-		}
+			/*res.redirect('/users/profile')*/
+    
+                db.user.findByPk(req.session.userLogged.id)
+                    .then(function (userlogon) {
+                        userlogon.update({
+        
+                        first_name: req.body.name,
+                        last_name: req.body.lastName,
+                        user_alias: req.body.userAlias,
+                        email: req.body.eMail,
+                        // pass: bcryptjs.hashSync(req.body.password, genSaltSync()),
+                        //avatar: req.files[0].filename,
+                        avatar: req.files.length ? req.files[0].filename : null,
+        
+                        }).then(userlogon => {
+                            req.session.userLogged = userlogon;
+                            res.redirect('/users/profile')
+                        }).catch(function(e){
+                            res.render('error')
+                        });
+                    })
+            
+		
 	},
 
     logout: (req, res) => {

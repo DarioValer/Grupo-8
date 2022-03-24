@@ -1,4 +1,4 @@
-document.getElementById("prod-image").onchange = function(e) {
+document.getElementById("avatar").onchange = function(e) {
     // Creamos el objeto de la clase FileReader
     let reader = new FileReader();
   

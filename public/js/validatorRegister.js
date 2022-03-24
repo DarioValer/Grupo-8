@@ -11,7 +11,7 @@ let errorName = document.getElementById("errorName");
 if (inputName.value == '') {
     errorName.innerHTML = ''
     //errors.push('Nombre es un Campo obligatorio')
-    errorName.innerHTML = "Nombre es un Campo obligatorio wey";
+    errorName.innerHTML = "Nombre es un Campo obligatorio";
 } else if (inputName.value.length < 2) {
     errorName.innerHTML = ''
     errorName.innerHTML = "El campo Nombre debe tener al menos 2 caracteres";

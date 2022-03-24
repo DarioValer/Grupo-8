@@ -88,6 +88,8 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .display-description {
@@ -101,8 +103,6 @@ body {
     justify-content: flex-start;
     position: relative;
     flex-wrap: wrap;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
 .fa-hand-point-right {
@@ -181,7 +181,7 @@ a:link {
     color: #fff;
     font-size: 22px;
     font-weight: 550;
-    background-color: #51b4c72e;
+    background-color: #51b4c7ba;
     z-index: 98;
     display: flex;
     flex-wrap: nowrap;

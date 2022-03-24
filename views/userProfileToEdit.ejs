@@ -21,16 +21,8 @@
             <div class="avatar-profile" id="preview">
                 <img id="profile-avatar" class="profile-avatar" src="/img/avatars/<%= locals.userLogged.avatar || 'logoSimple.png' %>"  alt="avatar" width="100%" height="100%">  
             </div>
-            <label class="labell">
-                <div class="divAddImages">
-                  <label class="p-reg" for="avatar">Cambiar foto de perfil <i class="far fa-edit"></i> </label>
-                  <input name="avatar" type="file" multiple="multiple" class="p-img" accept= ".jpg, .jpeg, .png, .gif" id="prod-image">
-                  <% if (locals.errors && errors.avatar) { %>
-                    <span style="color: red"><%= errors.avatar.msg %></span>
-                  <%} %>
-                  <div id="errorImage" class="errors"></div>
-                </div>
-              </label>  
+                
+              
         </div>
         
         
@@ -68,6 +60,17 @@
                             <input id="email" class="input-form" type="email" name="eMail" value="<%= locals.userLogged.email %>" disabled selected required>
                         </div>
                     </div>
+                    <label class="labell">
+                        <div class="divAddImages">
+                          <label class="p-reg" for="avatar">Cambiar foto de perfil <i class="far fa-edit"></i> </label>
+                          <!--<input name="avatar" type="file" multiple="multiple" class="p-img" accept= ".jpg, .jpeg, .png, .gif" id="prod-image">-->
+                          <input name="avatar" type="file" multiple="multiple" class="p-img" accept= ".jpg, .jpeg, .png, .gif" id="avatar">
+                          <% if (locals.errors && errors.avatar) { %>
+                            <span style="color: red"><%= errors.avatar.msg %></span>
+                          <%} %>
+                          <div id="errorImage" class="errors"></div>
+                        </div>
+                    </label>
                     <input class="button" id="submit" type="submit" value="Guardar cambios">
                 </form>
             </div>

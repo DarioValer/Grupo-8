@@ -1,9 +1,9 @@
  /*window.addEventListener('load', function(){*/
- const formLogin = document.querySelector('form.form-login');
+/* const formLogin = document.querySelector('form.form-login');
 
  /* LOGIN */
 
- formLogin.addEventListener('submit', function(event){
+/* formLogin.addEventListener('submit', function(event){
 
      let errors = [];
 

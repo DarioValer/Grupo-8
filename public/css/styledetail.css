@@ -152,7 +152,7 @@ body {
 }
 
 .doce-cuotas {
-    font-size: 20px;
+    /*font-size: 20px;*/
     width: 100%;
 }
 
@@ -212,7 +212,7 @@ body {
     margin-bottom: 12px;
     display: block;
     padding: 8px 10px;
-    background-color: rgb(78 65 171);
+    background-color: rgb(61 51 136);
     min-width: 300px;
     height: 50px;
     margin: 20px 0;
@@ -224,12 +224,15 @@ body {
     border: none;
     font-weight: 600;
     cursor: url('../img/iconoCursorPointerZombie.png'), auto;
+    text-decoration: none!important;
 }
 
+#shadow-root {
+    text-decoration: none;
+}
 
-
-.detail-button:hover, .add-to-cart{
-    background-color: rgb(255, 64, 64);
+.detail-button:hover, .add-to-cart:hover{
+    background-color: rgb(78 65 171);
 }
 
 .link-ref {

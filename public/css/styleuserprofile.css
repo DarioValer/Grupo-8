@@ -152,6 +152,10 @@ body {
     width: 100%;
     justify-content: center;
     margin-top: 20px;
+    position: relative;
+    bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #a3a3a3;
 }
 
 .p-reg {
@@ -184,6 +188,11 @@ body {
         margin-top: 18%;
         margin-bottom: 11%;
     }  
+
+    /*.labell {
+        position: absolute;
+        bottom: 20%;
+    }*/
 }
 
 @media(min-width: 1024px) {

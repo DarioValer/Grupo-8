@@ -255,6 +255,7 @@ input[type='submit'] :active {
     }
 
     .sectionn {
+        margin-top: -5px;
         overflow: hidden;
         width: 100%;
         max-width: 100vw;
