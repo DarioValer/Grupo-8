@@ -9,22 +9,22 @@ body {
     background-color: #f6f6f6;
 }
 
-/*.main-container-detail {
-    width: 90vw;
+.main-container-detail {
+    width: 95%;
     display: flex;
-    flex-wrap: nowrap;
+    /*flex-wrap: nowrap;*/
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding: 5%;
+    /*padding: 5%;*/
     margin-top: 20%;
     margin-bottom: 15%;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    /*background-color: white;*/
     border-radius: 5%;
     border: 1px solid #f0f0f0;
-}*/
+}
 
 .container-flex {
     width: 95%;
@@ -55,7 +55,6 @@ body {
 }
 
 .image-product-detail {
-    max-height: 500px;
     box-sizing: border-box;
     border-radius: 5%;
     width: 100%!important;
@@ -64,12 +63,22 @@ body {
 }
 
 .main-product-detail {
-    margin-top: 10px;
+    /*margin-top: 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: #fff;
-    padding: 5%;
+    padding: 5%;*/
+    border-left: 1px solid #f0f0f0;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 .product-name {
@@ -83,14 +92,16 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     width: 90%;
-    margin: 25px auto;
+    /*margin: 25px auto;*/
     margin-bottom: 0!important;
 }
 
+
+
 .price-detail {
-    margin-bottom: 12px;
+    margin: 12px;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .description-detail {
@@ -101,25 +112,96 @@ body {
 
 .info {
     display: flex;
-    margin: 10%;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: left!important;
+    font-family: "Ubuntu",sans-serif;
+    margin-top: 20px;
+    line-height: 17px;
 }
 
 .icon-info {
-    width: 25px;
-    margin-right: 10px;
+    position: relative;
+    width: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.icon {
+    max-width: 2rem;
+    max-height: 2rem;
+}
+
+.container-info {
+    width: 90%;
+    padding-top: 10px;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: "Quicksand",sans-serif!important;
+    box-sizing: border-box;
+    line-height: 1.5;
 }
 
 .container-cards {
     width: 80%;
 }
 
+.doce-cuotas {
+    font-size: 20px;
+    width: 100%;
+}
+
 .icon-cards {
     width: 80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: initial;
 }
 
+.card {
+    color: #008fcf;
+}
 
+.cards {
+    color: #afafaf;
+}
+
+.i-check{
+    color: #3fa73f;
+}
+.envio {
+    color: #3fa73f;
+}
+
+.text {
+    font-weight: bolder;
+}
+
+.p-low {
+    color: #afafaf;
+}
+
+.i-shield{
+    color: #338d8d;
+}
+
+.i-fast-truck {
+    color: #afafaf
+}
+.i-truck {
+    color: #afafaf
+}
+.i-local {
+    color: #afafaf
+}
+
+.description-detail {
+    margin-right: 5px;
+}
 
 
 .quantity-and-cart-block {
@@ -131,7 +213,7 @@ body {
     display: block;
     padding: 8px 10px;
     background-color: rgb(78 65 171);
-    width: 70%;
+    min-width: 300px;
     height: 50px;
     margin: 20px 0;
     margin-left: auto;
@@ -183,24 +265,44 @@ body {
 @media(min-width: 1024px) {
     .main-container-detail {
         flex-direction: row;
-        margin-top: 10%;
-        margin-bottom: 7%;
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
     .image-product-detail {
         width: 45vw;
         padding: 10px;
     }
+
+    .content-prod {
+        border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .main-container-detail {
+        background-color: #fff;
+        padding: auto;
+    }
+
+    .product-title-img {
+       padding: 0;
+       margin: 3%;
+
+    }
+
+    .main-container-detail {
+        max-width: 1200px;
+        max-height: 640px;
+    }
 }
 
 @media(min-width: 1440px) {
-    .main-container-detail {
-        width: 90vw;
-        margin-top: 1.5%;
-        margin-bottom: 1%;
-    }
-    .main-product-detail {
-        width: 28vw;
-    }
+    
 }
 
 /*

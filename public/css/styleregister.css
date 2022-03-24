@@ -56,6 +56,11 @@ body {
     margin-top: 10px;
 }
 
+.logoLetras:hover {
+    filter: drop-shadow(0 0 10px #51b4c7);
+    transition: all 0.2s;
+}
+
 
 .logo-content {
     width: 100%;

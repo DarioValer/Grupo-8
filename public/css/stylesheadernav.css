@@ -46,6 +46,13 @@ h1 {
 .logoLetras {
     height: 160px;
     /*width: 160%;*/
+    /*filter: drop-shadow(0 0 10px #51b4c7);
+    transition: all 0.3s;*/
+}
+
+.logoLetras:hover {
+    filter: drop-shadow(0 0 10px #51b4c7);
+    transition: all 0.2s;
 }
 
 .hamburger {
@@ -233,7 +240,7 @@ h1 {
 .go-icon {
     position: absolute;
     right: 1%;
-    top: 0;
+    top: 0px;
     background-color:rgb(23 18 60);
     text-decoration: none;
     border: none;
@@ -297,6 +304,10 @@ h1 {
     .search-box {
         right: 21%;
         width: 50%;
+    }
+
+    .go-icon {
+        top: 3px;
     }
 
 }

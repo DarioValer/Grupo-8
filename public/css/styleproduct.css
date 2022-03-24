@@ -12,7 +12,7 @@ body {
 }
 
 .novelties-prods {
-    margin-top: 16%;
+    margin-top: 59px;
     z-index: 99;
 }
 
@@ -63,15 +63,14 @@ body {
 }
 
 .display-product {
-    background-color: rgb(161 136 194);
-    padding: 5px;
+    background-color: rgb(81 180 199);
     border: 8px;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     font-size: 16px;
     max-width: 350px;
-    min-width: 350px;
+    min-width: 280px;
     border-radius: 5px;
     z-index: 90;
     position: relative;
@@ -92,6 +91,7 @@ body {
 }
 
 .display-description {
+    align-items: center;
     background-color: white;
     width: 100%;
     padding: 10px 10px;
@@ -101,6 +101,8 @@ body {
     justify-content: flex-start;
     position: relative;
     flex-wrap: wrap;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .fa-hand-point-right {
@@ -108,7 +110,6 @@ body {
     
     font-size: 20px;
     font-weight: bold;
-    width: 5%;
     padding: 10px;
     transition: all 0.5s;
 }
@@ -180,7 +181,7 @@ a:link {
     color: #fff;
     font-size: 22px;
     font-weight: 550;
-    background-color: rgba(0, 0, 0, 0.80);
+    background-color: #51b4c72e;
     z-index: 98;
     display: flex;
     flex-wrap: nowrap;
@@ -189,6 +190,7 @@ a:link {
     border-radius: 5px;
     padding: 10px;
     transition: opacity 0.25s;
+    border: 2px double #51b4c7
 }
 
 .descrip-overlay {
@@ -236,15 +238,10 @@ h5 {
 /* MEDIA QUERIES */
 
 @media(min-width: 768px) {
-    .novelties-prods {
-        margin-top: 9.5%;
-    }
+    
 }
 
 @media(min-width: 1024px) {
-    .novelties-prods {
-        margin-top: 7.5%;
-    }
     
     .main-container-prods {
         flex-direction: row;
@@ -265,8 +262,6 @@ h5 {
 }
 
 @media(min-width: 1440px) {
-    .novelties-prods {
-        margin-top: 4.25%;
-    }
+
 }
 

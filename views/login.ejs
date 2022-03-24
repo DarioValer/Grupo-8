@@ -45,6 +45,7 @@
               <% if (locals.errors && errors.eMail) { %>
                 <span style="color: red"><%= errors.eMail.msg %></span>
               <%} %>
+              <div id="errorEmail" class="errors"></div>
               </label>
               <label class="labell" for="">
                 <div class="divs"><p>Contraseña</p></div>
@@ -52,6 +53,7 @@
               <% if (locals.errors && errors.password) { %>
                 <span style="color: red"><%= errors.password.msg %></span>
               <%} %>
+              <div id="errorPassword" class="errors"></div>
               </label>
               <input class="inp-button" type="submit" id="submit" value="Ingresar">
               <label class="check-label" for="remember"id="remember-label"><input class="checkbox" type="checkbox" name="remember_user"> <p class="p-log">Recordar usuario y contraseña</p></label> 

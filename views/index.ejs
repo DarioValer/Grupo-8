@@ -97,23 +97,23 @@
         <div class="main-container">
             <% for (let i = 0; i < 4; i++){%>
                 <% if (products[i].StatusId == 2) {%>
-            <a href="/products/detail/<%=products[i].id%>" class="link-ref"><article class="display-product-index">
-            <h4 class="title-prod"><%=products[i].title%></h4>
-            <div class="title-overlay title-overlay--blur">
-                  <p class="p-overlay"><%=products[i].title%></p>
-                <div class="descrip-overlay">
-                  <h5 class="p-overlay"><%=products[i].descrip%></p>
-                </div>
-            </div>
-    
-            <img src="/img/<%=products[i].image%>" alt="imagen de producto">
-            
-            <div class="display-description-index">
-            <i class="fas fa-hand-point-right"></i>
-            <p class="price">$<%=products[i].price%></p>
-            </div>
-            
-        </article></a>
+            <a href="/products/detail/<%=products[i].id%>" class="link-ref">
+                <article class="display-product-index">
+                    
+                    <div class="title-overlay title-overlay--blur">
+                        <p class="p-overlay"><%=products[i].title%></p>
+                        <div class="descrip-overlay">
+                        <h5 class="p-overlay"><%=products[i].descrip%></p>
+                        </div>
+                    </div>
+                    <img src="/img/<%=products[i].image%>" alt="imagen de producto">
+                    <div class="display-description-index">
+                    <i class="fas fa-hand-point-right"></i>
+                    <p class="price">$<%=products[i].price%></p>
+                    </div>
+                    <h4 class="title-prod"><%=products[i].title%></h4>
+                </article>
+            </a>
         <%}%>
         <%}%>
         </div>
