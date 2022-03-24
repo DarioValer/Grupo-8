@@ -16,10 +16,12 @@
        <%- include('./partials/headerNavbar') %>
 
     <section class="main-container-detail">
-            <img class="image-product-detail" src="/img/<%=product.image%>" alt="" width="100%" height="100%">
-
-        <div class="main-product-detail">  
-            <h4 class="product-name"><%=product.title%></h4>
+        <div class="container-flex content-prod">
+            <div class="product-title-img content-prod">
+                <h4 class="product-name"><%=product.title%></h4>
+                <img class="image-product-detail" src="/img/<%=product.image%>" alt="" width="100%" height="100%">
+            </div>
+            <div class="main-product-detail content-prod">  
             <p class="price-detail">$<%=product.price%></p>
             <p class="description-detail"><%=product.descrip%></p>
 
@@ -46,7 +48,9 @@
                 <% } %>
                 </div>
                 </div>
-                </div>
+            </div>
+        </div>
+        
 
     </section>
 
